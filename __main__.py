@@ -6,6 +6,8 @@ import json_handler as jh
 
 
 ERRORS = False
+FILE_PATH = ''
+SAVE_FILE = {}
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -17,119 +19,174 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Button Events
         self.ui.pushButton_Open.clicked.connect(self.open_file_dialog)
+        self.ui.pushButton_Save.clicked.connect(self.save_file)
 
         # Line Edit Events
         self.ui.lineEdit_Lvl_Sovereigns.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Sovereigns,
-            target=self.ui.lineEdit_Effective_Sovereigns,
-            value=self.ui.lineEdit_Lvl_Sovereigns.text()
+            level=self.ui.lineEdit_Lvl_Sovereigns,
+            effective_level=self.ui.lineEdit_Effective_Sovereigns,
+            selection=self.ui.lineEdit_Lvl_Sovereigns,
+            val_id=131137
         ))
         self.ui.lineEdit_Lvl_Terror.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Terror,
-            target=self.ui.lineEdit_Effective_Terror,
-            value=self.ui.lineEdit_Lvl_Terror.text()
+            level=self.ui.lineEdit_Lvl_Terror,
+            effective_level=self.ui.lineEdit_Effective_Terror,
+            selection=self.ui.lineEdit_Lvl_Terror,
+            val_id=131232
         ))
         self.ui.lineEdit_Lvl_Hull.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Hull,
-            target=self.ui.lineEdit_Effective_Hull,
-            value=self.ui.lineEdit_Lvl_Hull.text()
+            level=self.ui.lineEdit_Lvl_Hull,
+            effective_level=self.ui.lineEdit_Effective_Hull,
+            selection=self.ui.lineEdit_Lvl_Hull,
+            modifier=self.ui.lineEdit_Modifier_Hull,
+            val_id=131237
+        ))
+        self.ui.lineEdit_Modifier_Hull.textEdited.connect(lambda: self.update_values(
+            level=self.ui.lineEdit_Modifier_Hull,
+            effective_level=self.ui.lineEdit_Effective_Hull,
+            selection=self.ui.lineEdit_Modifier_Hull,
+            modifier=self.ui.lineEdit_Lvl_Hull,
+            val_id=131237
+        ))
+        self.ui.lineEdit_Lvl_Crew.textEdited.connect(lambda: self.update_values(
+            level=self.ui.lineEdit_Lvl_Crew,
+            effective_level=self.ui.lineEdit_Effective_Crew,
+            selection=self.ui.lineEdit_Lvl_Crew,
+            val_id=131235
         ))
         self.ui.lineEdit_Lvl_Date.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Date,
-            target=self.ui.lineEdit_Effective_Date,
-            value=self.ui.lineEdit_Lvl_Date.text()
+            level=self.ui.lineEdit_Lvl_Date,
+            effective_level=self.ui.lineEdit_Effective_Date,
+            selection=self.ui.lineEdit_Lvl_Date,
+            val_id=132055
+        ))
+        self.ui.lineEdit_Lvl_Hold.textEdited.connect(lambda: self.update_values(
+            level=self.ui.lineEdit_Lvl_Hold,
+            effective_level=self.ui.lineEdit_Effective_Hold,
+            selection=self.ui.lineEdit_Lvl_Hold,
+            val_id=132788,
+            modifier=self.ui.lineEdit_Modifier_Hold
         ))
         self.ui.lineEdit_Modifier_Hold.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Modifier_Hold,
-            target=self.ui.lineEdit_Effective_Hold,
-            value=self.ui.lineEdit_Modifier_Hold.text()
+            level=self.ui.lineEdit_Modifier_Hold,
+            effective_level=self.ui.lineEdit_Effective_Hold,
+            selection=self.ui.lineEdit_Modifier_Hold,
+            val_id=132788,
+            modifier=self.ui.lineEdit_Lvl_Hold
         ))
         self.ui.lineEdit_Lvl_Hearts.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Hearts,
-            target=self.ui.lineEdit_Effective_Hearts,
-            value=self.ui.lineEdit_Lvl_Hearts.text(),
-            value2=self.ui.lineEdit_Modifier_Hearts.text()
+            level=self.ui.lineEdit_Lvl_Hearts,
+            effective_level=self.ui.lineEdit_Effective_Hearts,
+            selection=self.ui.lineEdit_Lvl_Hearts,
+            val_id=131138,
+            modifier=self.ui.lineEdit_Modifier_Hearts
         ))
         self.ui.lineEdit_Modifier_Hearts.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Modifier_Hearts,
-            target=self.ui.lineEdit_Effective_Hearts,
-            value=self.ui.lineEdit_Modifier_Hearts.text(),
-            value2=self.ui.lineEdit_Lvl_Hearts.text()
+            level=self.ui.lineEdit_Modifier_Hearts,
+            effective_level=self.ui.lineEdit_Effective_Hearts,
+            selection=self.ui.lineEdit_Modifier_Hearts,
+            val_id=131138,
+            modifier=self.ui.lineEdit_Lvl_Hearts
         ))
         self.ui.lineEdit_Lvl_Veils.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Veils,
-            target=self.ui.lineEdit_Effective_Veils,
-            value=self.ui.lineEdit_Lvl_Veils.text(),
-            value2=self.ui.lineEdit_Modifier_Veils.text()
+            level=self.ui.lineEdit_Lvl_Veils,
+            effective_level=self.ui.lineEdit_Effective_Veils,
+            selection=self.ui.lineEdit_Lvl_Veils,
+            val_id=131140,
+            modifier=self.ui.lineEdit_Modifier_Veils
         ))
         self.ui.lineEdit_Modifier_Veils.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Modifier_Veils,
-            target=self.ui.lineEdit_Effective_Veils,
-            value=self.ui.lineEdit_Modifier_Veils.text(),
-            value2=self.ui.lineEdit_Lvl_Veils.text()
+            level=self.ui.lineEdit_Modifier_Veils,
+            effective_level=self.ui.lineEdit_Effective_Veils,
+            selection=self.ui.lineEdit_Modifier_Veils,
+            val_id=131140,
+            modifier=self.ui.lineEdit_Lvl_Veils
         ))
         self.ui.lineEdit_Lvl_Iron.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Iron,
-            target=self.ui.lineEdit_Effective_Iron,
-            value=self.ui.lineEdit_Lvl_Iron.text(),
-            value2=self.ui.lineEdit_Modifier_Iron.text()
+            level=self.ui.lineEdit_Lvl_Iron,
+            effective_level=self.ui.lineEdit_Effective_Iron,
+            selection=self.ui.lineEdit_Lvl_Iron,
+            val_id=131139,
+            modifier=self.ui.lineEdit_Modifier_Iron
         ))
         self.ui.lineEdit_Modifier_Iron.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Modifier_Iron,
-            target=self.ui.lineEdit_Effective_Iron,
-            value=self.ui.lineEdit_Modifier_Iron.text(),
-            value2=self.ui.lineEdit_Lvl_Iron.text()
+            level=self.ui.lineEdit_Modifier_Iron,
+            effective_level=self.ui.lineEdit_Effective_Iron,
+            selection=self.ui.lineEdit_Modifier_Iron,
+            val_id=131139,
+            modifier=self.ui.lineEdit_Lvl_Iron
         ))
         self.ui.lineEdit_Lvl_Mirrors.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Mirrors,
-            target=self.ui.lineEdit_Effective_Mirrors,
-            value=self.ui.lineEdit_Lvl_Mirrors.text(),
-            value2=self.ui.lineEdit_Modifier_Mirrors.text()
+            level=self.ui.lineEdit_Lvl_Mirrors,
+            effective_level=self.ui.lineEdit_Effective_Mirrors,
+            selection=self.ui.lineEdit_Lvl_Mirrors,
+            val_id=131141,
+            modifier=self.ui.lineEdit_Modifier_Mirrors
         ))
         self.ui.lineEdit_Modifier_Mirrors.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Modifier_Mirrors,
-            target=self.ui.lineEdit_Effective_Mirrors,
-            value=self.ui.lineEdit_Modifier_Mirrors.text(),
-            value2=self.ui.lineEdit_Lvl_Mirrors.text()
+            level=self.ui.lineEdit_Modifier_Mirrors,
+            effective_level=self.ui.lineEdit_Effective_Mirrors,
+            selection=self.ui.lineEdit_Modifier_Mirrors,
+            val_id=131141,
+            modifier=self.ui.lineEdit_Lvl_Mirrors
         ))
         self.ui.lineEdit_Lvl_CharLvl.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_CharLvl,
-            target=self.ui.lineEdit_Effective_CharLvl,
-            value=self.ui.lineEdit_Lvl_CharLvl.text()
+            level=self.ui.lineEdit_Lvl_CharLvl,
+            effective_level=self.ui.lineEdit_Effective_CharLvl,
+            val_id=131233,
+            selection=self.ui.lineEdit_Lvl_CharLvl
         ))
         self.ui.lineEdit_Lvl_CharPts.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_CharPts,
-            target=self.ui.lineEdit_Effective_CharPts,
-            value=self.ui.lineEdit_Lvl_CharPts.text()
+            level=self.ui.lineEdit_Lvl_CharPts,
+            effective_level=self.ui.lineEdit_Effective_CharPts,
+            val_id=132996,
+            selection=self.ui.lineEdit_Lvl_CharPts
         ))
         self.ui.lineEdit_Lvl_Exp.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Exp,
-            target=self.ui.lineEdit_Effective_Exp,
-            value=self.ui.lineEdit_Lvl_Exp.text()
+            level=self.ui.lineEdit_Lvl_Exp,
+            effective_level=self.ui.lineEdit_Effective_Exp,
+            val_id=131234,
+            selection=self.ui.lineEdit_Lvl_Exp
         ))
         self.ui.lineEdit_Lvl_SecretComp.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_SecretComp,
-            target=self.ui.lineEdit_Effective_SecretComp,
-            value=self.ui.lineEdit_Lvl_SecretComp.text()
+            level=self.ui.lineEdit_Lvl_SecretComp,
+            effective_level=self.ui.lineEdit_Effective_SecretComp,
+            selection=self.ui.lineEdit_Lvl_SecretComp,
+            val_id=139041,
+            modifier=self.ui.lineEdit_Modifier_SecretComp
+        ))
+        self.ui.lineEdit_Modifier_SecretComp.textEdited.connect(lambda: self.update_values(
+            level=self.ui.lineEdit_Modifier_SecretComp,
+            effective_level=self.ui.lineEdit_Effective_SecretComp,
+            selection=self.ui.lineEdit_Modifier_SecretComp,
+            val_id=139041,
+            modifier=self.ui.lineEdit_Lvl_SecretComp
         ))
         self.ui.lineEdit_Lvl_Condition.textEdited.connect(lambda: self.update_values(
-            origin=self.ui.lineEdit_Lvl_Condition,
-            target=self.ui.lineEdit_Effective_Condition,
-            value=self.ui.lineEdit_Lvl_Condition.text()
+            level=self.ui.lineEdit_Lvl_Condition,
+            effective_level=self.ui.lineEdit_Effective_Condition,
+            val_id=131221,
+            selection=self.ui.lineEdit_Lvl_Condition
         ))
 
         self.show()
 
     def open_file_dialog(self):
-        file_path = wh.get_file_path(sys.platform)
+        global FILE_PATH, SAVE_FILE
+        path = wh.get_file_path(sys.platform)
         options = QFileDialog.Options()
-        file_name, _ = QFileDialog.getOpenFileName(self, 'Open', file_path,
-                                                   'Autosave (autosave_s.json);;JSON Files (*.json);;All Files (*)',
-                                                   options=options)
+        file_name, _ = QFileDialog.getOpenFileName(
+            self,
+            'Open',
+            path,
+            'Autosave (autosave_s.json);;JSON Files (*.json);;All Files (*)',
+            options=options
+        )
         if file_name:
+            FILE_PATH = file_name
             self.ui.label_LoadedFileName.setText(wh.get_display_name(file_name))
-            save_file = jh.open_savefile(file_name)
-            self.append_values(save_file)
+            SAVE_FILE = jh.open_savefile(file_name)
+            self.append_values(SAVE_FILE)
 
     def append_values(self, save_file):
         # Sovereigns
@@ -185,19 +242,34 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.lineEdit_Modifier_SecretComp.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 139041))
         self.ui.lineEdit_Effective_SecretComp.setText(jh.get_value(save_file, 'EffectiveLevel', 139041))
 
-    def update_values(self, origin, target, value, value2='0'):
-        global ERROR
+    def update_values(self, level, effective_level, selection, val_id, modifier=None):
+        global ERRORS, SAVE_FILE
+
+        val_level = level.text()
+        val_modifier = modifier.text() if modifier else '0'
+
         try:
-            val1 = int(value) if value2 != '' else 0
-            val2 = int(value2) if value2 != '' else 0
-            target.setText(str(val1 + val2))
-            origin.setStyleSheet('color: rgb(0,0,0)')
-            target.setStyleSheet('color: rgb(0,0,0)')
-            ERROR = False
+            val1 = int(val_level)
+            val2 = int(val_modifier)
+
+            level.setStyleSheet('color: rgb(0,0,0)')
+            effective_level.setStyleSheet('color: rgb(0,0,0)')
+            if modifier:
+                modifier.setStyleSheet('color: rgb(0,0,0)')
+
+            effective_level.setText(str(val1 + val2))
+            SAVE_FILE = jh.write_values(SAVE_FILE, val1, val2, val_id)
+
+            ERRORS = False
+
         except ValueError:
-            origin.setStyleSheet('color: rgb(255,0,0)')
-            target.setStyleSheet('color: rgb(255,0,0)')
-            ERROR = True
+            selection.setStyleSheet('color: rgb(255,0,0)')
+            effective_level.setStyleSheet('color: rgb(255,0,0)')
+
+            ERRORS = True
+
+    def save_file(self):
+        pass
 
 
 if __name__ == '__main__':

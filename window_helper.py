@@ -1,7 +1,5 @@
 import os
 
-ERRORS = False
-
 
 def get_file_path(platform):
     if platform == 'linux':
