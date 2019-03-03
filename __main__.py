@@ -6,7 +6,7 @@ import json_handler as jh
 
 
 ERRORS = False
-FILE_PATH = ''
+APPDATA_PATH = ''
 SAVE_FILE = {}
 
 
@@ -19,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Button Events
         self.ui.pushButton_Open.clicked.connect(self.open_file_dialog)
-        self.ui.pushButton_Save.clicked.connect(self.save_file)
+        self.ui.pushButton_Save.clicked.connect(self.save_file_dialog)
 
         # Line Edit Events
         self.ui.lineEdit_Lvl_Sovereigns.textEdited.connect(lambda: self.update_values(
@@ -172,21 +172,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.show()
 
     def open_file_dialog(self):
-        global FILE_PATH, SAVE_FILE
-        path = wh.get_file_path(sys.platform)
+        global APPDATA_PATH, SAVE_FILE
+        APPDATA_PATH = wh.get_file_path(sys.platform)
         options = QFileDialog.Options()
         file_name, _ = QFileDialog.getOpenFileName(
             self,
             'Open',
-            path,
+            APPDATA_PATH,
             'Autosave (autosave_s.json);;JSON Files (*.json);;All Files (*)',
             options=options
         )
         if file_name:
-            FILE_PATH = file_name
             self.ui.label_LoadedFileName.setText(wh.get_display_name(file_name))
-            SAVE_FILE = jh.open_savefile(file_name)
+            SAVE_FILE = jh.open_json_file(file_name)
             self.append_values(SAVE_FILE)
+
+    def save_file_dialog(self):
+        options = QFileDialog.Options()
+        file_name, _ = QFileDialog.getSaveFileName(
+            self,
+            'Save',
+            APPDATA_PATH,
+            'Autosave (autosave_s.json);;JSON Files (*.json);;All Files (*)',
+            options=options
+        )
+        if file_name:
+            jh.save_json_file(file_name, SAVE_FILE)
 
     def append_values(self, save_file):
         # Sovereigns
@@ -267,9 +278,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             effective_level.setStyleSheet('color: rgb(255,0,0)')
 
             ERRORS = True
-
-    def save_file(self):
-        pass
 
 
 if __name__ == '__main__':

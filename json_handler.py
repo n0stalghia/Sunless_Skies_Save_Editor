@@ -1,10 +1,15 @@
 import json
 
 
-def open_savefile(file_name):
-    with open(file_name) as json_file:
+def open_json_file(file_name):
+    with open(file_name, 'r') as json_file:
         save_file = json.load(json_file)
     return save_file
+
+
+def save_json_file(file_name, save_file):
+    with open(file_name, 'w') as json_file:
+        json.dump(save_file, json_file)
 
 
 def get_value(save_file, key, val_id):
