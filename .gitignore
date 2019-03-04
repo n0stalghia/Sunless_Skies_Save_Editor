@@ -1,5 +1,8 @@
+# Binaries Folder
+Release
+
 # UI Resource folder
-Qt Designer UI
+Qt Designer UI/generate.bat
 
 #IDEA
 .idea
