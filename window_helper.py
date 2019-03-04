@@ -6,8 +6,8 @@ def get_file_path(platform):
         # TODO implement linux file pathing
         return ''
     elif platform == 'darwin':
-        # TODO implement macOS file pathing
-        return ''
+        # Default path for macOS not working due to QT Bug https://bugreports.qt.io/browse/QTBUG-46711
+        return r'~/Library/Application\ Support/unity.Failbetter\ Games.Sunless\ Skies/storage/characterrepository'
     else:
         separator = '\\'
         appdata = os.getenv('APPDATA')
