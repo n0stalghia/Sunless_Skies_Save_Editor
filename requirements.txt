@@ -1,0 +1,4 @@
+PyQt==5.12
+PyQt5-sip==4.19.14
+py2exe==0.9.2.2
+setuptools==40.8.0
