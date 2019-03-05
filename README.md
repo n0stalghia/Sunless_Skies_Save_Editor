@@ -7,9 +7,4 @@ Use it with reference to [1410c's save guide](https://steamcommunity.com/sharedf
 Always backup your save files prior to modification.
 
 # Installation
-## Windows
-Dowload the latest executable from the [releases](https://github.com/markossipow/Sunless_Skies_Save_Editor/releases) page.
-## macOS
-Coming soon.
-## Linux
-Coming soon.
+Dowload the latest executable from the [releases](https://github.com/markossipow/Sunless_Skies_Save_Editor/releases) page. Project is Linux-compatible, I will release a binary when the project reaches v1.0 (or earlier if the demand is there)
