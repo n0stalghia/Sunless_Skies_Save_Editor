@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sunless Skies Save Editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="pushButton_Open">
+          <property name="text">
+           <string>Open</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_Save">
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_About">
+          <property name="text">
+           <string>About</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_LoadedFile">
+          <property name="maximumSize">
+           <size>
+            <width>90</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Loaded savefile:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_LoadedFileName">
+          <property name="text">
+           <string>None</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_stats">
+       <attribute name="title">
+        <string>Stats</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="horizontalSpacing">
+         <number>10</number>
+        </property>
+        <item row="9" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Veils"/>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Terror"/>
+        </item>
+        <item row="8" column="4">
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="4">
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Hearts"/>
+        </item>
+        <item row="5" column="6">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="6">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="4">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="4">
+         <widget class="QLabel" name="label_19">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_Sovereigns">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Sovereigns:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Iron"/>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_Terror">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Terror:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_Date">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Date</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_Hull">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Hull:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_Crew">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Crew:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="0">
+         <widget class="QLabel" name="label_SecretComp">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Secret&lt;br&gt;Compartments:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="label_Hold">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Hold:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="0">
+         <widget class="QLabel" name="label_Condition">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Condition:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="label_Veils">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Veils:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="label_Hearts">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Hearts:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLabel" name="label_Mirrors">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Mirrors:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="0">
+         <widget class="QLabel" name="label_Exp">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Experience:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_Iron">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Iron:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Effective Level Modifier</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Hold"/>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_CharLevel">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Charactrer Level:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="0">
+         <widget class="QLabel" name="label_CharPoints">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Character Points:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="label_4">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Level</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Mirrors"/>
+        </item>
+        <item row="4" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Hull"/>
+        </item>
+        <item row="12" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_CharLvl"/>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Sovereigns"/>
+        </item>
+        <item row="13" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_CharPts"/>
+        </item>
+        <item row="6" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Date"/>
+        </item>
+        <item row="9" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Veils"/>
+        </item>
+        <item row="17" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Condition"/>
+        </item>
+        <item row="16" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_SecretComp"/>
+        </item>
+        <item row="15" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Exp"/>
+        </item>
+        <item row="5" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Crew"/>
+        </item>
+        <item row="11" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Mirrors"/>
+        </item>
+        <item row="10" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Iron"/>
+        </item>
+        <item row="8" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Hearts"/>
+        </item>
+        <item row="4" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Hull"/>
+        </item>
+        <item row="4" column="4">
+         <widget class="QLabel" name="label_23">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="4">
+         <widget class="QLabel" name="label_24">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_SecretComp"/>
+        </item>
+        <item row="16" column="4">
+         <widget class="QLabel" name="label_25">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="6">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="6">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="6">
+         <widget class="QLabel" name="label_17">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="6">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="6">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Sovereigns">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="6">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="6">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="7">
+         <widget class="QLabel" name="label_3">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Effective Level</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Date">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Hold">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="6">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Crew">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="6">
+         <widget class="QLabel" name="label_22">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Terror">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Veils">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Hull">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Mirrors">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_CharLvl">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Hearts">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_CharPts">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Exp">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="6">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="6">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Iron">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="6">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Condition">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_SecretComp">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="6">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Hold"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Map</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_26">
+            <property name="text">
+             <string>Current Location</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QComboBox" name="comboBox_Region"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_Port"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_27">
+            <property name="text">
+             <string>Fog of War Disabled</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="checkBox_FoW_Albion">
+              <property name="text">
+               <string>Albion</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="checkBox_FoW_Reach">
+              <property name="text">
+               <string>The Reach</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QCheckBox" name="checkBox_FoW_Eleutheria">
+              <property name="text">
+               <string>Eleutheria</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QCheckBox" name="checkBox_FoW_BlueKingdom">
+              <property name="text">
+               <string>The Blue  Kingdom</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_28">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Checked&lt;/span&gt;: Fog of War removed&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Partially checked: &lt;/span&gt;Some parts of Fog of War removed (by natural exploration) &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Unchecked: &lt;/span&gt;Fog of War covers the whole map&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
