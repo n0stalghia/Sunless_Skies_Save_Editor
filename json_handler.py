@@ -49,13 +49,13 @@ def write_stats(save_file, val1, val2, val_id):
     return save_file
 
 
-def get_current_port_id(save_file):
+def get_current_port_name(save_file):
     region_id = save_file['GeneratedWorld']['CurrentRegionId']
     port_id = save_file['GeneratedWorld']['CurrentPortId']
     return PORTS[region_id]['Id'][port_id]['DisplayName']
 
 
-def get_current_region_id(save_file):
+def get_current_region_name(save_file):
     region_id = save_file['GeneratedWorld']['CurrentRegionId']
     return PORTS[region_id]['Name']
 

@@ -178,6 +178,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.checkBox_FoW_Reach.checkState(),
             'The Reach'
         ))
+        self.ui.checkBox_FoW_Albion.stateChanged.connect(lambda: self.update_fow_state(
+            self.ui.checkBox_FoW_Albion.checkState(),
+            'Albion'
+        ))
+        self.ui.checkBox_FoW_Eleutheria.stateChanged.connect(lambda: self.update_fow_state(
+            self.ui.checkBox_FoW_Eleutheria.checkState(),
+            'Eleutheria'
+        ))
+        self.ui.checkBox_FoW_BlueKingdom.stateChanged.connect(lambda: self.update_fow_state(
+            self.ui.checkBox_FoW_BlueKingdom.checkState(),
+            'The Blue Kingdom'
+        ))
 
         self.show()
 
@@ -278,9 +290,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def append_map(self, save_file):
         # Teleportation
         self.ui.comboBox_Region.addItems(['The Reach', 'Albion', 'Eleutheria', 'The Blue Kingdom'])
-        self.ui.comboBox_Port.addItems(jh.get_port_list(save_file))
-        self.ui.comboBox_Region.setCurrentText(jh.get_current_region_id(save_file))
-        self.ui.comboBox_Port.setCurrentText(jh.get_current_port_id(save_file))
+        self.ui.comboBox_Region.setCurrentText(jh.get_current_region_name(save_file))
+        self.ui.comboBox_Port.setCurrentText(jh.get_current_port_name(save_file))
 
         # Fog of War
         self.ui.checkBox_FoW_Reach.setCheckState(jh.get_fow_state(save_file, 'The Reach'))
@@ -326,7 +337,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             global SAVE_FILE
             SAVE_FILE = jh.write_fow_values(SAVE_FILE, state, region)
-
 
     def generate_port_list(self, region):
         region = region.currentText()
