@@ -17,34 +17,50 @@ def save_json_file(file_name, save_file):
 def get_value(save_file, key, val_id):
     query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
                   val_id), None)
+    if not query:
+        return '0'
     return str(query[key]) if key in query else '0'
 
 
 def write_stats(save_file, val1, val2, val_id):
     query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
                   val_id), None)
+    if not query:
+        query = {
+            "EffectiveLevel": val1 + val2,
+            "Level": val1,
+            "AssociatedQuality": {
+                "Tag": "",
+                "Id": val_id
+            }
+        }
 
-    if val1 == 0:
-        if 'Level' in query:
-            del query['Level']
+        if val2 != 0:
+            query['EffectiveLevelModifier'] = val2
+
+        save_file['QualitiesPossessedList'].append(query)
     else:
-        query['Level'] = val1
+        if val1 == 0:
+            if 'Level' in query:
+                del query['Level']
+        else:
+            query['Level'] = val1
 
-    if val2 == 0:
-        if 'EffectiveLevelModifier' in query:
-            del query['EffectiveLevelModifier']
-    else:
-        query['EffectiveLevelModifier'] = val2
+        if val2 == 0:
+            if 'EffectiveLevelModifier' in query:
+                del query['EffectiveLevelModifier']
+        else:
+            query['EffectiveLevelModifier'] = val2
 
-    if (val1 + val2) == 0:
-        if 'EffectiveLevel' in query:
-            del query['EffectiveLevel']
-    else:
-        query['EffectiveLevel'] = val1 + val2
+        if (val1 + val2) == 0:
+            if 'EffectiveLevel' in query:
+                del query['EffectiveLevel']
+        else:
+            query['EffectiveLevel'] = val1 + val2
 
-    for index, quality in enumerate(save_file['QualitiesPossessedList']):
-        if quality['AssociatedQuality']['Id'] == val_id:
-            save_file['QualitiesPossessedList'][index] = query
+        for index, quality in enumerate(save_file['QualitiesPossessedList']):
+            if quality['AssociatedQuality']['Id'] == val_id:
+                save_file['QualitiesPossessedList'][index] = query
 
     return save_file
 
