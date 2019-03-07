@@ -5,7 +5,7 @@ SAVEFILE_PATH = ''
 SAVE_FILE = {}
 CACHED_SAVEFILE = {}
 
-VERSION = 'v0.2.1'
+VERSION = 'v0.2.2'
 
 PORTS = {
     '9f50ee22-a594-4c42-939c-022cbe2fb677': {

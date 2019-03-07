@@ -17,6 +17,8 @@ def save_json_file(file_name, save_file):
 def get_value(save_file, key, val_id):
     query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
                   val_id), None)
+    if not query:
+        return '0'
     return str(query[key]) if key in query else '0'
 
 
