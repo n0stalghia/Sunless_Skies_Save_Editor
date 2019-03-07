@@ -176,3 +176,7 @@ def write_fow_values(save_file, state, region_name):
             break
 
     return save_file
+
+
+def get_possessed_quality(save_file, quality_id):
+    return 'Test'

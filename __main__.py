@@ -232,6 +232,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def initialize_values(self, save_file):
         self.append_stats(save_file)
         self.append_map(save_file)
+        self.append_possessions(save_file)
 
     def append_stats(self, save_file):
         # Sovereigns
@@ -298,6 +299,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.checkBox_FoW_Albion.setCheckState(jh.get_fow_state(save_file, 'Albion'))
         self.ui.checkBox_FoW_Eleutheria.setCheckState(jh.get_fow_state(save_file, 'Eleutheria'))
         self.ui.checkBox_FoW_BlueKingdom.setCheckState(jh.get_fow_state(save_file, 'The Blue Kingdom'))
+
+    def append_possessions(self, save_file):
+        # Academe
+        self.ui.lineEdit_Poss_Academe_Specimen.setText(jh.get_possessed_quality(save_file, 131123))
 
     def update_stats(self, level, effective_level, selection, val_id, modifier=None):
         if not INITIALIZATION:
