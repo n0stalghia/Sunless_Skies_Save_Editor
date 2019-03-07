@@ -236,57 +236,57 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def append_stats(self, save_file):
         # Sovereigns
-        self.ui.lineEdit_Lvl_Sovereigns.setText(jh.get_value(save_file, 'Level', 131137))
-        self.ui.lineEdit_Effective_Sovereigns.setText(jh.get_value(save_file, 'EffectiveLevel', 131137))
+        self.ui.lineEdit_Lvl_Sovereigns.setText(jh.get_quality_value(save_file, 131137, 'Level'))
+        self.ui.lineEdit_Effective_Sovereigns.setText(jh.get_quality_value(save_file, 131137))
         # Hearts
-        self.ui.lineEdit_Lvl_Hearts.setText(jh.get_value(save_file, 'Level', 131138))
-        self.ui.lineEdit_Modifier_Hearts.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 131138))
-        self.ui.lineEdit_Effective_Hearts.setText(jh.get_value(save_file, 'EffectiveLevel', 131138))
+        self.ui.lineEdit_Lvl_Hearts.setText(jh.get_quality_value(save_file, 131138, 'Level'))
+        self.ui.lineEdit_Modifier_Hearts.setText(jh.get_quality_value(save_file, 131138, 'EffectiveLevelModifier'))
+        self.ui.lineEdit_Effective_Hearts.setText(jh.get_quality_value(save_file, 131138))
         # Iron
-        self.ui.lineEdit_Lvl_Iron.setText(jh.get_value(save_file, 'Level', 131139))
-        self.ui.lineEdit_Modifier_Iron.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 131139))
-        self.ui.lineEdit_Effective_Iron.setText(jh.get_value(save_file, 'EffectiveLevel', 131139))
+        self.ui.lineEdit_Lvl_Iron.setText(jh.get_quality_value(save_file, 131139, 'Level'))
+        self.ui.lineEdit_Modifier_Iron.setText(jh.get_quality_value(save_file, 131139, 'EffectiveLevelModifier'))
+        self.ui.lineEdit_Effective_Iron.setText(jh.get_quality_value(save_file, 131139))
         # Veils
-        self.ui.lineEdit_Lvl_Veils.setText(jh.get_value(save_file, 'Level', 131140))
-        self.ui.lineEdit_Modifier_Veils.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 131140))
-        self.ui.lineEdit_Effective_Veils.setText(jh.get_value(save_file, 'EffectiveLevel', 131140))
+        self.ui.lineEdit_Lvl_Veils.setText(jh.get_quality_value(save_file, 131140, 'Level'))
+        self.ui.lineEdit_Modifier_Veils.setText(jh.get_quality_value(save_file, 131140, 'EffectiveLevelModifier'))
+        self.ui.lineEdit_Effective_Veils.setText(jh.get_quality_value(save_file, 131140))
         # Mirrors
-        self.ui.lineEdit_Lvl_Mirrors.setText(jh.get_value(save_file, 'Level', 131141))
-        self.ui.lineEdit_Modifier_Mirrors.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 131141))
-        self.ui.lineEdit_Effective_Mirrors.setText(jh.get_value(save_file, 'EffectiveLevel', 131141))
+        self.ui.lineEdit_Lvl_Mirrors.setText(jh.get_quality_value(save_file, 131141, 'Level'))
+        self.ui.lineEdit_Modifier_Mirrors.setText(jh.get_quality_value(save_file, 131141, 'EffectiveLevelModifier'))
+        self.ui.lineEdit_Effective_Mirrors.setText(jh.get_quality_value(save_file, 131141))
         # Condition
-        self.ui.lineEdit_Lvl_Condition.setText(jh.get_value(save_file, 'Level', 131221))
-        self.ui.lineEdit_Effective_Condition.setText(jh.get_value(save_file, 'EffectiveLevel', 131221))
+        self.ui.lineEdit_Lvl_Condition.setText(jh.get_quality_value(save_file, 131221, 'Level'))
+        self.ui.lineEdit_Effective_Condition.setText(jh.get_quality_value(save_file, 131221))
         # Terror
-        self.ui.lineEdit_Lvl_Terror.setText(jh.get_value(save_file, 'Level', 131232))
-        self.ui.lineEdit_Effective_Terror.setText(jh.get_value(save_file, 'EffectiveLevel', 131232))
+        self.ui.lineEdit_Lvl_Terror.setText(jh.get_quality_value(save_file, 131232, 'Level'))
+        self.ui.lineEdit_Effective_Terror.setText(jh.get_quality_value(save_file, 131232))
         # Character Level
-        self.ui.lineEdit_Lvl_CharLvl.setText(jh.get_value(save_file, 'Level', 131233))
-        self.ui.lineEdit_Effective_CharLvl.setText(jh.get_value(save_file, 'EffectiveLevel', 131233))
+        self.ui.lineEdit_Lvl_CharLvl.setText(jh.get_quality_value(save_file, 131233, 'Level'))
+        self.ui.lineEdit_Effective_CharLvl.setText(jh.get_quality_value(save_file, 131233))
         # Experience
-        self.ui.lineEdit_Lvl_Exp.setText(jh.get_value(save_file, 'Level', 131234))
-        self.ui.lineEdit_Effective_Exp.setText(jh.get_value(save_file, 'EffectiveLevel', 131234))
+        self.ui.lineEdit_Lvl_Exp.setText(jh.get_quality_value(save_file, 131234, 'Level'))
+        self.ui.lineEdit_Effective_Exp.setText(jh.get_quality_value(save_file, 131234))
         # Crew
-        self.ui.lineEdit_Lvl_Crew.setText(jh.get_value(save_file, 'Level', 131235))
-        self.ui.lineEdit_Effective_Crew.setText(jh.get_value(save_file, 'EffectiveLevel', 131235))
+        self.ui.lineEdit_Lvl_Crew.setText(jh.get_quality_value(save_file, 131235, 'Level'))
+        self.ui.lineEdit_Effective_Crew.setText(jh.get_quality_value(save_file, 131235))
         # Hull
-        self.ui.lineEdit_Lvl_Hull.setText(jh.get_value(save_file, 'Level', 131237))
-        self.ui.lineEdit_Modifier_Hull.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 131237))
-        self.ui.lineEdit_Effective_Hull.setText(jh.get_value(save_file, 'EffectiveLevel', 131237))
+        self.ui.lineEdit_Lvl_Hull.setText(jh.get_quality_value(save_file, 131237, 'Level'))
+        self.ui.lineEdit_Modifier_Hull.setText(jh.get_quality_value(save_file, 131237, 'EffectiveLevelModifier'))
+        self.ui.lineEdit_Effective_Hull.setText(jh.get_quality_value(save_file, 131237))
         # Date
-        self.ui.lineEdit_Lvl_Date.setText(jh.get_value(save_file, 'Level', 132055))
-        self.ui.lineEdit_Effective_Date.setText(jh.get_value(save_file, 'EffectiveLevel', 132055))
+        self.ui.lineEdit_Lvl_Date.setText(jh.get_quality_value(save_file, 132055, 'Level'))
+        self.ui.lineEdit_Effective_Date.setText(jh.get_quality_value(save_file, 132055))
         # Hold
-        self.ui.lineEdit_Lvl_Hold.setText(jh.get_value(save_file, 'Level', 132788))
-        self.ui.lineEdit_Modifier_Hold.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 132788))
-        self.ui.lineEdit_Effective_Hold.setText(jh.get_value(save_file, 'EffectiveLevel', 132788))
+        self.ui.lineEdit_Lvl_Hold.setText(jh.get_quality_value(save_file, 132788, 'Level'))
+        self.ui.lineEdit_Modifier_Hold.setText(jh.get_quality_value(save_file, 132788, 'EffectiveLevelModifier'))
+        self.ui.lineEdit_Effective_Hold.setText(jh.get_quality_value(save_file, 132788))
         # Character Points
-        self.ui.lineEdit_Lvl_CharPts.setText(jh.get_value(save_file, 'Level', 132996))
-        self.ui.lineEdit_Effective_CharPts.setText(jh.get_value(save_file, 'EffectiveLevel', 132996))
+        self.ui.lineEdit_Lvl_CharPts.setText(jh.get_quality_value(save_file, 132996, 'Level'))
+        self.ui.lineEdit_Effective_CharPts.setText(jh.get_quality_value(save_file, 132996))
         # Secret Compartments
-        self.ui.lineEdit_Lvl_SecretComp.setText(jh.get_value(save_file, 'Level', 139041))
-        self.ui.lineEdit_Modifier_SecretComp.setText(jh.get_value(save_file, 'EffectiveLevelModifier', 139041))
-        self.ui.lineEdit_Effective_SecretComp.setText(jh.get_value(save_file, 'EffectiveLevel', 139041))
+        self.ui.lineEdit_Lvl_SecretComp.setText(jh.get_quality_value(save_file, 139041, 'Level'))
+        self.ui.lineEdit_Modifier_SecretComp.setText(jh.get_quality_value(save_file, 139041, 'EffectiveLevelModifier'))
+        self.ui.lineEdit_Effective_SecretComp.setText(jh.get_quality_value(save_file, 139041))
 
     def append_map(self, save_file):
         # Teleportation
@@ -302,7 +302,69 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def append_possessions(self, save_file):
         # Academe
-        self.ui.lineEdit_Poss_Academe_Specimen.setText(jh.get_possessed_quality(save_file, 131123))
+        self.ui.lineEdit_Poss_Academe_Specimen.setText(jh.get_quality_value(save_file, 131123))
+        self.ui.lineEdit_Poss_Academe_Artifact.setText(jh.get_quality_value(save_file, 131124))
+        self.ui.lineEdit_Poss_Academe_Experiment.setText(jh.get_quality_value(save_file, 131125))
+        self.ui.lineEdit_Poss_Academe_Enigma.setText(jh.get_quality_value(save_file, 131126))
+        # Bohemia
+        self.ui.lineEdit_Poss_Bohemia_SkyStory.setText(jh.get_quality_value(save_file, 131115))
+        self.ui.lineEdit_Poss_Bohemia_Vision.setText(jh.get_quality_value(save_file, 131116))
+        self.ui.lineEdit_Poss_Bohemia_Moment.setText(jh.get_quality_value(save_file, 131117))
+        self.ui.lineEdit_Poss_Bohemia_Treasure.setText(jh.get_quality_value(save_file, 131118))
+        # Establishment
+        self.ui.lineEdit_Poss_Estab_Gossip.setText(jh.get_quality_value(save_file, 131127))
+        self.ui.lineEdit_Poss_Estab_Permit.setText(jh.get_quality_value(save_file, 131128))
+        self.ui.lineEdit_Poss_Estab_Benefactor.setText(jh.get_quality_value(save_file, 131129))
+        self.ui.lineEdit_Poss_Estab_Dispensation.setText(jh.get_quality_value(save_file, 131130))
+        # Villainy
+        self.ui.lineEdit_Poss_Villainy_Tale.setText(jh.get_quality_value(save_file, 131119))
+        self.ui.lineEdit_Poss_Villainy_Secret.setText(jh.get_quality_value(save_file, 131120))
+        self.ui.lineEdit_Poss_Villainy_Chart.setText(jh.get_quality_value(save_file, 131121))
+        self.ui.lineEdit_Poss_Villainy_Promise.setText(jh.get_quality_value(save_file, 131122))
+        # Gratitudes
+        self.ui.lineEdit_Poss_Gratitudes_Windward.setText(jh.get_quality_value(save_file, 132085))
+        self.ui.lineEdit_Poss_Gratitude_Tacketies.setText(jh.get_quality_value(save_file, 132124))
+        self.ui.lineEdit_Poss_Gratitude_Ministry.setText(jh.get_quality_value(save_file, 135546))
+        self.ui.lineEdit_Poss_Gratitude_NSL.setText(jh.get_quality_value(save_file, 135547))
+        self.ui.lineEdit_Poss_Gratitude_Embassy.setText(jh.get_quality_value(save_file, 139092))
+        self.ui.lineEdit_Poss_Gratitude_Society.setText(jh.get_quality_value(save_file, 135399))
+        # Miscellaneous
+        self.ui.lineEdit_Poss_Misc_Guests.setText(jh.get_quality_value(save_file, 139064))
+        # Port Reports
+        self.ui.checkBox_Poss_Reports.setCheckState(jh.get_port_reports(save_file))
+        # Heirlooms
+        self.ui.checkBox_Poss_Heirloom_Song.setChecked(jh.get_heirloom(save_file, 137375))
+        self.ui.checkBox_Poss_Heirloom_Wealth.setChecked(jh.get_heirloom(save_file, 137376))
+        self.ui.checkBox_Poss_Heirloom_Cup.setChecked(jh.get_heirloom(save_file, 139484))
+        self.ui.checkBox_Poss_Heirloom_Secret.setChecked(jh.get_heirloom(save_file, 139160))
+        # Reach
+        self.ui.lineEdit_Poss_ReachMisc_Circus.setText(jh.get_quality_value(save_file, 137036))
+        self.ui.lineEdit_Poss_ReachMisc_StovepipePlate.setText(jh.get_quality_value(save_file, 133455))
+        self.ui.lineEdit_Poss_ReachMisc_Shard.setText(jh.get_quality_value(save_file, 133439))
+        self.ui.lineEdit_Poss_ReachMisc_TacketyPlate.setText(jh.get_quality_value(save_file, 132976))
+        # Albion
+        self.ui.lineEdit_Poss_AlbionMisc_Mods.setText(jh.get_quality_value(save_file, 135357))
+        self.ui.lineEdit_Poss_AlbionMisc_Invites.setText(jh.get_quality_value(save_file, 134274))
+        # Eleutheria
+        self.ui.lineEdit_Poss_EleuMisc_EmpyreanPlate.setText(jh.get_quality_value(save_file, 137409))
+        self.ui.lineEdit_Poss_EleuMisc_DouserPlate.setText(jh.get_quality_value(save_file, 137621))
+        self.ui.lineEdit_Poss_EleuMisc_Mystery.setText(jh.get_quality_value(save_file, 137370))
+        self.ui.lineEdit_Poss_EleuMisc_Scrap.setText(jh.get_quality_value(save_file, 137371))
+        self.ui.lineEdit_Poss_EleuMisc_Green.setText(jh.get_quality_value(save_file, 135123))
+        self.ui.lineEdit_Poss_EleuMisc_Golden.setText(jh.get_quality_value(save_file, 135124))
+        self.ui.lineEdit_Poss_EleuMisc_Red.setText(jh.get_quality_value(save_file, 135125))
+        self.ui.lineEdit_Poss_EleuMisc_Blue.setText(jh.get_quality_value(save_file, 135126))
+        self.ui.lineEdit_Poss_EleuMisc_Soft.setText(jh.get_quality_value(save_file, 135134))
+        # The Blue Kingdom
+        self.ui.lineEdit_Poss_TBKMisc_Indulgence.setText(jh.get_quality_value(save_file, 138080))
+        self.ui.lineEdit_Poss_TBKMisc_Roses.setText(jh.get_quality_value(save_file, 138072))
+        self.ui.lineEdit_Poss_TBKMisc_Salt.setText(jh.get_quality_value(save_file, 138073))
+        self.ui.lineEdit_Poss_TBKMisc_Flowers.setText(jh.get_quality_value(save_file, 138074))
+        self.ui.lineEdit_Poss_TBKMisc_Volumes.setText(jh.get_quality_value(save_file, 139095))
+        self.ui.lineEdit_Poss_TBKMisc_Incarnadine.setText(jh.get_quality_value(save_file, 138934))
+        self.ui.lineEdit_Poss_TBKMisc_Verdance.setText(jh.get_quality_value(save_file, 138935))
+        self.ui.lineEdit_Poss_TBKMisc_Hourglass.setText(jh.get_quality_value(save_file, 138937))
+        self.ui.lineEdit_Poss_TBKMisc_Dominion.setText(jh.get_quality_value(save_file, 138938))
 
     def update_stats(self, level, effective_level, selection, val_id, modifier=None):
         if not INITIALIZATION:

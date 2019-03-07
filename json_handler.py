@@ -14,7 +14,7 @@ def save_json_file(file_name, save_file):
         json.dump(save_file, json_file)
 
 
-def get_value(save_file, key, val_id):
+def get_quality_value(save_file, val_id, key='EffectiveLevel'):
     query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
                   val_id), None)
     if not query:
@@ -178,5 +178,9 @@ def write_fow_values(save_file, state, region_name):
     return save_file
 
 
-def get_possessed_quality(save_file, quality_id):
-    return 'Test'
+def get_port_reports(save_file):
+    return Qt.Unchecked
+
+
+def get_heirloom(save_file, param):
+    return Qt.Unchecked

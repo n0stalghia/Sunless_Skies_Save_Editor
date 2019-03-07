@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>600</height>
+    <height>677</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -87,10 +87,27 @@
         <item row="3" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_Terror"/>
         </item>
+        <item row="11" column="6">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Hearts"/>
+        </item>
         <item row="8" column="4">
          <widget class="QLabel" name="label_18">
           <property name="text">
            <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="6">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>=</string>
           </property>
          </widget>
         </item>
@@ -101,36 +118,24 @@
           </property>
          </widget>
         </item>
-        <item row="8" column="5">
-         <widget class="QLineEdit" name="lineEdit_Modifier_Hearts"/>
-        </item>
-        <item row="5" column="6">
-         <widget class="QLabel" name="label_15">
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_Terror">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
           <property name="text">
-           <string>=</string>
+           <string>Terror:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
-        <item row="11" column="6">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>=</string>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="4">
-         <widget class="QLabel" name="label_21">
-          <property name="text">
-           <string>+</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="4">
-         <widget class="QLabel" name="label_19">
-          <property name="text">
-           <string>+</string>
-          </property>
-         </widget>
+        <item row="10" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Iron"/>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_Sovereigns">
@@ -148,11 +153,22 @@
           </property>
          </widget>
         </item>
-        <item row="10" column="5">
-         <widget class="QLineEdit" name="lineEdit_Modifier_Iron"/>
+        <item row="9" column="4">
+         <widget class="QLabel" name="label_19">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
         </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_Terror">
+        <item row="11" column="4">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_Crew">
           <property name="maximumSize">
            <size>
             <width>110</width>
@@ -160,7 +176,7 @@
            </size>
           </property>
           <property name="text">
-           <string>Terror:</string>
+           <string>Crew:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -183,38 +199,6 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_Hull">
-          <property name="maximumSize">
-           <size>
-            <width>110</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Hull:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="label_Crew">
-          <property name="maximumSize">
-           <size>
-            <width>110</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Crew:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
         <item row="16" column="0">
          <widget class="QLabel" name="label_SecretComp">
           <property name="maximumSize">
@@ -231,8 +215,8 @@
           </property>
          </widget>
         </item>
-        <item row="7" column="0">
-         <widget class="QLabel" name="label_Hold">
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_Hull">
           <property name="maximumSize">
            <size>
             <width>110</width>
@@ -240,23 +224,7 @@
            </size>
           </property>
           <property name="text">
-           <string>Hold:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="17" column="0">
-         <widget class="QLabel" name="label_Condition">
-          <property name="maximumSize">
-           <size>
-            <width>110</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Condition:</string>
+           <string>Hull:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -279,6 +247,22 @@
           </property>
          </widget>
         </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="label_Hold">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Hold:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
         <item row="8" column="0">
          <widget class="QLabel" name="label_Hearts">
           <property name="maximumSize">
@@ -289,6 +273,48 @@
           </property>
           <property name="text">
            <string>Hearts:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="0">
+         <widget class="QLabel" name="label_Condition">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Condition:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Effective Level Modifier</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="0">
+         <widget class="QLabel" name="label_Exp">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Experience:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -311,22 +337,6 @@
           </property>
          </widget>
         </item>
-        <item row="15" column="0">
-         <widget class="QLabel" name="label_Exp">
-          <property name="maximumSize">
-           <size>
-            <width>110</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Experience:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
         <item row="10" column="0">
          <widget class="QLabel" name="label_Iron">
           <property name="maximumSize">
@@ -337,35 +347,6 @@
           </property>
           <property name="text">
            <string>Iron:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Effective Level Modifier</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="5">
-         <widget class="QLineEdit" name="lineEdit_Modifier_Hold"/>
-        </item>
-        <item row="12" column="0">
-         <widget class="QLabel" name="label_CharLevel">
-          <property name="maximumSize">
-           <size>
-            <width>110</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Charactrer Level:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -404,20 +385,42 @@
           </property>
          </widget>
         </item>
+        <item row="7" column="5">
+         <widget class="QLineEdit" name="lineEdit_Modifier_Hold"/>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_CharLevel">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Charactrer Level:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Sovereigns"/>
+        </item>
+        <item row="12" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_CharLvl"/>
+        </item>
+        <item row="13" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_CharPts"/>
+        </item>
         <item row="11" column="5">
          <widget class="QLineEdit" name="lineEdit_Modifier_Mirrors"/>
         </item>
         <item row="4" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_Hull"/>
         </item>
-        <item row="12" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_CharLvl"/>
-        </item>
-        <item row="1" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_Sovereigns"/>
-        </item>
-        <item row="13" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_CharPts"/>
+        <item row="5" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Crew"/>
         </item>
         <item row="6" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_Date"/>
@@ -425,26 +428,17 @@
         <item row="9" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_Veils"/>
         </item>
-        <item row="17" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_Condition"/>
-        </item>
         <item row="16" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_SecretComp"/>
+        </item>
+        <item row="17" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Condition"/>
         </item>
         <item row="15" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_Exp"/>
         </item>
-        <item row="5" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_Crew"/>
-        </item>
         <item row="11" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_Mirrors"/>
-        </item>
-        <item row="10" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_Iron"/>
-        </item>
-        <item row="8" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_Hearts"/>
         </item>
         <item row="4" column="5">
          <widget class="QLineEdit" name="lineEdit_Modifier_Hull"/>
@@ -455,6 +449,12 @@
            <string>+</string>
           </property>
          </widget>
+        </item>
+        <item row="10" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Iron"/>
+        </item>
+        <item row="8" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Hearts"/>
         </item>
         <item row="7" column="4">
          <widget class="QLabel" name="label_24">
@@ -487,8 +487,8 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="6">
-         <widget class="QLabel" name="label_17">
+        <item row="13" column="6">
+         <widget class="QLabel" name="label_12">
           <property name="text">
            <string>=</string>
           </property>
@@ -501,13 +501,6 @@
           </property>
          </widget>
         </item>
-        <item row="13" column="6">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>=</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="7">
          <widget class="QLineEdit" name="lineEdit_Effective_Sovereigns">
           <property name="readOnly">
@@ -515,17 +508,17 @@
           </property>
          </widget>
         </item>
-        <item row="7" column="6">
-         <widget class="QLabel" name="label_2">
+        <item row="4" column="6">
+         <widget class="QLabel" name="label_17">
           <property name="text">
            <string>=</string>
           </property>
          </widget>
         </item>
-        <item row="8" column="6">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>=</string>
+        <item row="7" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Hold">
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -545,6 +538,13 @@
           </property>
          </widget>
         </item>
+        <item row="7" column="6">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
         <item row="6" column="7">
          <widget class="QLineEdit" name="lineEdit_Effective_Date">
           <property name="readOnly">
@@ -552,24 +552,10 @@
           </property>
          </widget>
         </item>
-        <item row="7" column="7">
-         <widget class="QLineEdit" name="lineEdit_Effective_Hold">
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="6">
-         <widget class="QLabel" name="label_6">
+        <item row="8" column="6">
+         <widget class="QLabel" name="label">
           <property name="text">
            <string>=</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="7">
-         <widget class="QLineEdit" name="lineEdit_Effective_Crew">
-          <property name="readOnly">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -587,8 +573,29 @@
           </property>
          </widget>
         </item>
+        <item row="1" column="6">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
         <item row="9" column="7">
          <widget class="QLineEdit" name="lineEdit_Effective_Veils">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Crew">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_CharPts">
           <property name="readOnly">
            <bool>true</bool>
           </property>
@@ -608,13 +615,6 @@
           </property>
          </widget>
         </item>
-        <item row="12" column="7">
-         <widget class="QLineEdit" name="lineEdit_Effective_CharLvl">
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
         <item row="8" column="7">
          <widget class="QLineEdit" name="lineEdit_Effective_Hearts">
           <property name="readOnly">
@@ -622,8 +622,8 @@
           </property>
          </widget>
         </item>
-        <item row="13" column="7">
-         <widget class="QLineEdit" name="lineEdit_Effective_CharPts">
+        <item row="12" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_CharLvl">
           <property name="readOnly">
            <bool>true</bool>
           </property>
@@ -633,13 +633,6 @@
          <widget class="QLineEdit" name="lineEdit_Effective_Exp">
           <property name="readOnly">
            <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="6">
-         <widget class="QLabel" name="label_16">
-          <property name="text">
-           <string>=</string>
           </property>
          </widget>
         </item>
@@ -657,6 +650,13 @@
           </property>
          </widget>
         </item>
+        <item row="6" column="6">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
         <item row="3" column="6">
          <widget class="QLabel" name="label_10">
           <property name="text">
@@ -664,10 +664,13 @@
           </property>
          </widget>
         </item>
-        <item row="17" column="7">
-         <widget class="QLineEdit" name="lineEdit_Effective_Condition">
-          <property name="readOnly">
-           <bool>true</bool>
+        <item row="7" column="3">
+         <widget class="QLineEdit" name="lineEdit_Lvl_Hold"/>
+        </item>
+        <item row="17" column="6">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>=</string>
           </property>
          </widget>
         </item>
@@ -678,15 +681,12 @@
           </property>
          </widget>
         </item>
-        <item row="17" column="6">
-         <widget class="QLabel" name="label_14">
-          <property name="text">
-           <string>=</string>
+        <item row="17" column="7">
+         <widget class="QLineEdit" name="lineEdit_Effective_Condition">
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
-        </item>
-        <item row="7" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_Hold"/>
         </item>
        </layout>
       </widget>
@@ -805,8 +805,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>56</height>
+             <width>558</width>
+             <height>69</height>
             </rect>
            </property>
            <attribute name="label">
@@ -898,8 +898,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>56</height>
+             <width>558</width>
+             <height>69</height>
             </rect>
            </property>
            <attribute name="label">
@@ -979,8 +979,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>56</height>
+             <width>558</width>
+             <height>69</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1060,8 +1060,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>56</height>
+             <width>558</width>
+             <height>69</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1141,8 +1141,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>80</height>
+             <width>558</width>
+             <height>90</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1255,8 +1255,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>52</height>
+             <width>558</width>
+             <height>69</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1293,8 +1293,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>557</width>
-             <height>88</height>
+             <width>558</width>
+             <height>150</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1335,8 +1335,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>52</height>
+             <width>558</width>
+             <height>69</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1357,17 +1357,17 @@ background: transparent;
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Song">
-              <property name="text">
-               <string>Heirloom: The Song of the Sky</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Cup">
               <property name="text">
                <string>Heirloom: the Martyr-King's Cup</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Song">
+              <property name="text">
+               <string>Heirloom: The Song of the Sky</string>
               </property>
              </widget>
             </item>
@@ -1378,8 +1378,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>570</width>
-             <height>52</height>
+             <width>541</width>
+             <height>109</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1400,18 +1400,18 @@ background: transparent;
               </property>
              </widget>
             </item>
+            <item row="1" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_Shard"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_Circus"/>
+            </item>
             <item row="1" column="3">
              <widget class="QLabel" name="label_55">
               <property name="text">
                <string>Ambiguous Shard</string>
               </property>
              </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_Circus"/>
-            </item>
-            <item row="1" column="4">
-             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_Shard"/>
             </item>
             <item row="0" column="3">
              <widget class="QLabel" name="label_56">
@@ -1433,124 +1433,57 @@ background: transparent;
               </property>
              </spacer>
             </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="page_5">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>-57</y>
-             <width>557</width>
-             <height>130</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Eleutheria: Miscellaneous</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_13">
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_57">
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_67">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Eleutheria: House of Rods and Chains&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Reach: Port Prosper&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
-            <item row="8" column="1">
-             <widget class="QLabel" name="label_58">
+            <item row="2" column="2">
+             <spacer name="horizontalSpacer_17">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="3">
+             <widget class="QLabel" name="label_68">
               <property name="text">
-               <string>Chunks of Blue Amber</string>
+               <string>Mangled Tackety Nameplate</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="2">
-             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Red"/>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_69">
+              <property name="text">
+               <string>Charred Stovepipe Nameplate</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_TacketyPlate"/>
             </item>
             <item row="3" column="1">
-             <widget class="QLabel" name="label_59">
-              <property name="text">
-               <string>Chunks of Red Amber</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="1">
-             <widget class="QLabel" name="label_60">
-              <property name="text">
-               <string>Chunks of Green Amber</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="4">
-             <widget class="QLabel" name="label_61">
-              <property name="text">
-               <string>Chunks of Soft Amber</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="2">
-             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Blue"/>
-            </item>
-            <item row="8" column="4">
-             <widget class="QLabel" name="label_62">
-              <property name="text">
-               <string>Chunks of Golden Amber</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="2">
-             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Green"/>
-            </item>
-            <item row="8" column="5">
-             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Golden"/>
-            </item>
-            <item row="11" column="1">
-             <widget class="QLabel" name="label_63">
-              <property name="text">
-               <string>Eleutherian Mystery</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="5">
-             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Soft"/>
-            </item>
-            <item row="10" column="1">
-             <widget class="QLabel" name="label_64">
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Miscellaneous&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
-            </item>
-            <item row="11" column="2">
-             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Mystery"/>
-            </item>
-            <item row="3" column="3">
-             <spacer name="horizontalSpacer_14">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="8" column="3">
-             <spacer name="horizontalSpacer_15">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
+             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_StovepipePlate"/>
             </item>
            </layout>
           </widget>
           <widget class="QWidget" name="page_11">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>558</width>
+             <height>69</height>
+            </rect>
+           </property>
            <attribute name="label">
             <string>Albion: Miscellaneous</string>
            </attribute>
@@ -1577,6 +1510,288 @@ background: transparent;
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_16">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>558</width>
+             <height>258</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Eleutheria: Miscellaneous</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_13">
+            <item row="4" column="4">
+             <widget class="QLabel" name="label_61">
+              <property name="text">
+               <string>Chunks of Soft Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="4">
+             <widget class="QLabel" name="label_62">
+              <property name="text">
+               <string>Chunks of Golden Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="5">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Golden"/>
+            </item>
+            <item row="4" column="5">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Soft"/>
+            </item>
+            <item row="2" column="5">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Red"/>
+            </item>
+            <item row="2" column="4">
+             <widget class="QLabel" name="label_59">
+              <property name="text">
+               <string>Chunks of Red Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QLabel" name="label_57">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Eleutheria: House of Rods and Chains&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLabel" name="label_60">
+              <property name="text">
+               <string>Chunks of Green Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="5">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Green"/>
+            </item>
+            <item row="3" column="4">
+             <widget class="QLabel" name="label_58">
+              <property name="text">
+               <string>Chunks of Blue Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="5">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Blue"/>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_71">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Eleutheria: Winter's Reside&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_72">
+              <property name="text">
+               <string>Charred Empyrean Nameplate</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_73">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Eleutheria: Eagle's Empyrean&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_74">
+              <property name="text">
+               <string>Plaque from a Douser Engine</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_EmpyreanPlate"/>
+            </item>
+            <item row="3" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_DouserPlate"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="label_64">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Miscellaneous&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLabel" name="label_63">
+              <property name="text">
+               <string>Eleutherian Mystery</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Mystery"/>
+            </item>
+            <item row="11" column="1">
+             <widget class="QLabel" name="label_70">
+              <property name="text">
+               <string>Scrap of Ancient Knowledge</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Scrap"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_12">
+           <attribute name="label">
+            <string>The Blue Kingdom: Miscellaneous</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_15">
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_75">
+              <property name="text">
+               <string>Testament of Roses</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_77">
+              <property name="text">
+               <string>Testament of Flowers</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_78">
+              <property name="text">
+               <string>Indulgence</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_76">
+              <property name="text">
+               <string>Testament of Salt</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="label_80">
+              <property name="text">
+               <string>Aspect of Incarnadine</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_79">
+              <property name="text">
+               <string>Volumes of Notes on the Blue Kingdom</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QLabel" name="label_81">
+              <property name="text">
+               <string>Aspect of Verdance</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="QLabel" name="label_83">
+              <property name="text">
+               <string>Aspect of Dominion</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QLabel" name="label_82">
+              <property name="text">
+               <string>Aspect of the Hourglass</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Indulgence"/>
+            </item>
+            <item row="0" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Volumes"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Roses"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Flowers"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Salt"/>
+            </item>
+            <item row="2" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Verdance"/>
+            </item>
+            <item row="3" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Hourglass"/>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Incarnadine"/>
+            </item>
+            <item row="4" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_TBKMisc_Dominion"/>
+            </item>
+            <item row="3" column="2">
+             <spacer name="horizontalSpacer_18">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="2">
+             <spacer name="horizontalSpacer_19">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="2">
+             <spacer name="horizontalSpacer_20">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="2">
+             <spacer name="horizontalSpacer_21">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
