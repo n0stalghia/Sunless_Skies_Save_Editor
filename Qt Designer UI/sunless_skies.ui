@@ -784,6 +784,7 @@
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
          <widget class="QToolBox" name="toolBox">
+<<<<<<< HEAD
           <property name="styleSheet">
            <string notr="true">QToolBox,
 QToolBox &gt; QScrollArea,
@@ -791,6 +792,8 @@ QToolBox &gt; QScrollArea &gt; #qt_scrollarea_viewport &gt; QWidget {
 background: transparent;
 }</string>
           </property>
+=======
+>>>>>>> Adding preliminary design for the Posessions Tab
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
           </property>
@@ -798,15 +801,24 @@ background: transparent;
            <enum>QFrame::Plain</enum>
           </property>
           <property name="currentIndex">
+<<<<<<< HEAD
            <number>0</number>
+=======
+           <number>5</number>
+>>>>>>> Adding preliminary design for the Posessions Tab
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>56</height>
+=======
+             <width>558</width>
+             <height>235</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
@@ -834,10 +846,17 @@ background: transparent;
              </widget>
             </item>
             <item row="0" column="1">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Academe_Specimen"/>
             </item>
             <item row="0" column="4">
              <widget class="QLineEdit" name="lineEdit_Poss_Academe_Experiment"/>
+=======
+             <widget class="QLineEdit" name="lineEdit"/>
+            </item>
+            <item row="0" column="4">
+             <widget class="QLineEdit" name="lineEdit_2"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="label_30">
@@ -860,10 +879,17 @@ background: transparent;
              </widget>
             </item>
             <item row="2" column="1">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Academe_Artifact"/>
             </item>
             <item row="2" column="4">
              <widget class="QLineEdit" name="lineEdit_Poss_Academe_Enigma"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_3"/>
+            </item>
+            <item row="2" column="4">
+             <widget class="QLineEdit" name="lineEdit_4"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer">
@@ -898,8 +924,13 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>56</height>
+=======
+             <width>558</width>
+             <height>235</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
@@ -907,7 +938,11 @@ background: transparent;
            </attribute>
            <layout class="QGridLayout" name="gridLayout_6">
             <item row="0" column="2">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Bohemia_SkyStory"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_5"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="4">
              <widget class="QLabel" name="label_35">
@@ -938,6 +973,7 @@ background: transparent;
              </widget>
             </item>
             <item row="4" column="2">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Bohemia_Vision"/>
             </item>
             <item row="0" column="5">
@@ -945,6 +981,15 @@ background: transparent;
             </item>
             <item row="4" column="5">
              <widget class="QLineEdit" name="lineEdit_Poss_Bohemia_Treasure"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_7"/>
+            </item>
+            <item row="0" column="5">
+             <widget class="QLineEdit" name="lineEdit_6"/>
+            </item>
+            <item row="4" column="5">
+             <widget class="QLineEdit" name="lineEdit_8"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="3">
              <spacer name="horizontalSpacer_3">
@@ -979,8 +1024,13 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>56</height>
+=======
+             <width>558</width>
+             <height>235</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
@@ -1002,7 +1052,11 @@ background: transparent;
              </widget>
             </item>
             <item row="0" column="1">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Estab_Gossip"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_9"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="label_39">
@@ -1012,7 +1066,11 @@ background: transparent;
              </widget>
             </item>
             <item row="0" column="4">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Estab_Benefactor"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_10"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="1" column="3">
              <widget class="QLabel" name="label_40">
@@ -1022,10 +1080,17 @@ background: transparent;
              </widget>
             </item>
             <item row="1" column="1">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Estab_Permit"/>
             </item>
             <item row="1" column="4">
              <widget class="QLineEdit" name="lineEdit_Poss_Estab_Dispensation"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_11"/>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLineEdit" name="lineEdit_12"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_5">
@@ -1060,8 +1125,13 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>56</height>
+=======
+             <width>558</width>
+             <height>235</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
@@ -1083,7 +1153,11 @@ background: transparent;
              </widget>
             </item>
             <item row="0" column="1">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Villainy_Tale"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_13"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="3">
              <widget class="QLabel" name="label_44">
@@ -1100,6 +1174,7 @@ background: transparent;
              </widget>
             </item>
             <item row="0" column="4">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Villainy_Chart"/>
             </item>
             <item row="1" column="1">
@@ -1107,6 +1182,15 @@ background: transparent;
             </item>
             <item row="1" column="4">
              <widget class="QLineEdit" name="lineEdit_Poss_Villainy_Promise"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_14"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_15"/>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLineEdit" name="lineEdit_16"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_7">
@@ -1141,8 +1225,13 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>80</height>
+=======
+             <width>558</width>
+             <height>235</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
@@ -1164,7 +1253,11 @@ background: transparent;
              </widget>
             </item>
             <item row="0" column="4">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Tacketies"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_18"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_47">
@@ -1187,10 +1280,17 @@ background: transparent;
              </spacer>
             </item>
             <item row="0" column="1">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Gratitudes_Windward"/>
             </item>
             <item row="1" column="1">
              <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Ministry"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_17"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_19"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="1" column="3">
              <widget class="QLabel" name="label_48">
@@ -1200,7 +1300,11 @@ background: transparent;
              </widget>
             </item>
             <item row="1" column="4">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_NSL"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_20"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_9">
@@ -1223,7 +1327,11 @@ background: transparent;
              </widget>
             </item>
             <item row="2" column="1">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Embassy"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_21"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
             <item row="2" column="2">
              <spacer name="horizontalSpacer_11">
@@ -1246,7 +1354,11 @@ background: transparent;
              </widget>
             </item>
             <item row="2" column="4">
+<<<<<<< HEAD
              <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Society"/>
+=======
+             <widget class="QLineEdit" name="lineEdit_22"/>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </item>
            </layout>
           </widget>
@@ -1255,13 +1367,19 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>52</height>
+=======
+             <width>558</width>
+             <height>235</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
             <string>Miscellaneous</string>
            </attribute>
+<<<<<<< HEAD
            <layout class="QGridLayout" name="gridLayout_10">
             <item row="0" column="0">
              <widget class="QLabel" name="label_52">
@@ -1287,19 +1405,27 @@ background: transparent;
              </spacer>
             </item>
            </layout>
+=======
+>>>>>>> Adding preliminary design for the Posessions Tab
           </widget>
           <widget class="QWidget" name="page_8">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>557</width>
              <height>88</height>
+=======
+             <width>100</width>
+             <height>30</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
             <string>Port Reports</string>
            </attribute>
+<<<<<<< HEAD
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <item>
              <widget class="QCheckBox" name="checkBox_Poss_Reports">
@@ -1329,19 +1455,27 @@ background: transparent;
              </spacer>
             </item>
            </layout>
+=======
+>>>>>>> Adding preliminary design for the Posessions Tab
           </widget>
           <widget class="QWidget" name="page_10">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>52</height>
+=======
+             <width>100</width>
+             <height>30</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
             <string>Heirlooms</string>
            </attribute>
+<<<<<<< HEAD
            <layout class="QGridLayout" name="gridLayout_11">
             <item row="1" column="1">
              <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Secret">
@@ -1372,19 +1506,27 @@ background: transparent;
              </widget>
             </item>
            </layout>
+=======
+>>>>>>> Adding preliminary design for the Posessions Tab
           </widget>
           <widget class="QWidget" name="page_9">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< HEAD
              <width>570</width>
              <height>52</height>
+=======
+             <width>100</width>
+             <height>30</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
             <string>Reach: Miscellaneous</string>
            </attribute>
+<<<<<<< HEAD
            <layout class="QGridLayout" name="gridLayout_12">
             <item row="0" column="0">
              <widget class="QLabel" name="label_53">
@@ -1434,19 +1576,28 @@ background: transparent;
              </spacer>
             </item>
            </layout>
+=======
+>>>>>>> Adding preliminary design for the Posessions Tab
           </widget>
           <widget class="QWidget" name="page_5">
            <property name="geometry">
             <rect>
              <x>0</x>
+<<<<<<< HEAD
              <y>-57</y>
              <width>557</width>
              <height>130</height>
+=======
+             <y>0</y>
+             <width>100</width>
+             <height>30</height>
+>>>>>>> Adding preliminary design for the Posessions Tab
             </rect>
            </property>
            <attribute name="label">
             <string>Eleutheria: Miscellaneous</string>
            </attribute>
+<<<<<<< HEAD
            <layout class="QGridLayout" name="gridLayout_13">
             <item row="1" column="1">
              <widget class="QLabel" name="label_57">
@@ -1605,6 +1756,11 @@ background: transparent;
           </property>
          </spacer>
         </item>
+=======
+          </widget>
+         </widget>
+        </item>
+>>>>>>> Adding preliminary design for the Posessions Tab
        </layout>
       </widget>
      </widget>

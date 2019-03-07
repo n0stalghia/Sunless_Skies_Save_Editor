@@ -379,16 +379,23 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QtWidgets.QGridLayout(self.tab_2)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.toolBox = QtWidgets.QToolBox(self.tab_2)
+<<<<<<< HEAD
         self.toolBox.setStyleSheet("QToolBox,\n"
 "QToolBox > QScrollArea,\n"
 "QToolBox > QScrollArea > #qt_scrollarea_viewport > QWidget {\n"
 "background: transparent;\n"
 "}")
+=======
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.toolBox.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.toolBox.setFrameShadow(QtWidgets.QFrame.Plain)
         self.toolBox.setObjectName("toolBox")
         self.page = QtWidgets.QWidget()
+<<<<<<< HEAD
         self.page.setGeometry(QtCore.QRect(0, 0, 570, 56))
+=======
+        self.page.setGeometry(QtCore.QRect(0, 0, 558, 235))
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.page.setObjectName("page")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.page)
         self.gridLayout_5.setObjectName("gridLayout_5")
@@ -400,12 +407,21 @@ class Ui_MainWindow(object):
         self.label_32.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_32.setObjectName("label_32")
         self.gridLayout_5.addWidget(self.label_32, 2, 3, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Academe_Specimen = QtWidgets.QLineEdit(self.page)
         self.lineEdit_Poss_Academe_Specimen.setObjectName("lineEdit_Poss_Academe_Specimen")
         self.gridLayout_5.addWidget(self.lineEdit_Poss_Academe_Specimen, 0, 1, 1, 1)
         self.lineEdit_Poss_Academe_Experiment = QtWidgets.QLineEdit(self.page)
         self.lineEdit_Poss_Academe_Experiment.setObjectName("lineEdit_Poss_Academe_Experiment")
         self.gridLayout_5.addWidget(self.lineEdit_Poss_Academe_Experiment, 0, 4, 1, 1)
+=======
+        self.lineEdit = QtWidgets.QLineEdit(self.page)
+        self.lineEdit.setObjectName("lineEdit")
+        self.gridLayout_5.addWidget(self.lineEdit, 0, 1, 1, 1)
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.page)
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.gridLayout_5.addWidget(self.lineEdit_2, 0, 4, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.label_30 = QtWidgets.QLabel(self.page)
         self.label_30.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_30.setObjectName("label_30")
@@ -414,18 +430,28 @@ class Ui_MainWindow(object):
         self.label_29.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_29.setObjectName("label_29")
         self.gridLayout_5.addWidget(self.label_29, 0, 3, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Academe_Artifact = QtWidgets.QLineEdit(self.page)
         self.lineEdit_Poss_Academe_Artifact.setObjectName("lineEdit_Poss_Academe_Artifact")
         self.gridLayout_5.addWidget(self.lineEdit_Poss_Academe_Artifact, 2, 1, 1, 1)
         self.lineEdit_Poss_Academe_Enigma = QtWidgets.QLineEdit(self.page)
         self.lineEdit_Poss_Academe_Enigma.setObjectName("lineEdit_Poss_Academe_Enigma")
         self.gridLayout_5.addWidget(self.lineEdit_Poss_Academe_Enigma, 2, 4, 1, 1)
+=======
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.page)
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.gridLayout_5.addWidget(self.lineEdit_3, 2, 1, 1, 1)
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.page)
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.gridLayout_5.addWidget(self.lineEdit_4, 2, 4, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_5.addItem(spacerItem1, 0, 2, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_5.addItem(spacerItem2, 2, 2, 1, 1)
         self.toolBox.addItem(self.page, "")
         self.page_2 = QtWidgets.QWidget()
+<<<<<<< HEAD
         self.page_2.setGeometry(QtCore.QRect(0, 0, 570, 56))
         self.page_2.setObjectName("page_2")
         self.gridLayout_6 = QtWidgets.QGridLayout(self.page_2)
@@ -433,6 +459,15 @@ class Ui_MainWindow(object):
         self.lineEdit_Poss_Bohemia_SkyStory = QtWidgets.QLineEdit(self.page_2)
         self.lineEdit_Poss_Bohemia_SkyStory.setObjectName("lineEdit_Poss_Bohemia_SkyStory")
         self.gridLayout_6.addWidget(self.lineEdit_Poss_Bohemia_SkyStory, 0, 2, 1, 1)
+=======
+        self.page_2.setGeometry(QtCore.QRect(0, 0, 558, 235))
+        self.page_2.setObjectName("page_2")
+        self.gridLayout_6 = QtWidgets.QGridLayout(self.page_2)
+        self.gridLayout_6.setObjectName("gridLayout_6")
+        self.lineEdit_5 = QtWidgets.QLineEdit(self.page_2)
+        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.gridLayout_6.addWidget(self.lineEdit_5, 0, 2, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.label_35 = QtWidgets.QLabel(self.page_2)
         self.label_35.setObjectName("label_35")
         self.gridLayout_6.addWidget(self.label_35, 0, 4, 1, 1)
@@ -445,6 +480,7 @@ class Ui_MainWindow(object):
         self.label_34 = QtWidgets.QLabel(self.page_2)
         self.label_34.setObjectName("label_34")
         self.gridLayout_6.addWidget(self.label_34, 4, 0, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Bohemia_Vision = QtWidgets.QLineEdit(self.page_2)
         self.lineEdit_Poss_Bohemia_Vision.setObjectName("lineEdit_Poss_Bohemia_Vision")
         self.gridLayout_6.addWidget(self.lineEdit_Poss_Bohemia_Vision, 4, 2, 1, 1)
@@ -454,13 +490,28 @@ class Ui_MainWindow(object):
         self.lineEdit_Poss_Bohemia_Treasure = QtWidgets.QLineEdit(self.page_2)
         self.lineEdit_Poss_Bohemia_Treasure.setObjectName("lineEdit_Poss_Bohemia_Treasure")
         self.gridLayout_6.addWidget(self.lineEdit_Poss_Bohemia_Treasure, 4, 5, 1, 1)
+=======
+        self.lineEdit_7 = QtWidgets.QLineEdit(self.page_2)
+        self.lineEdit_7.setObjectName("lineEdit_7")
+        self.gridLayout_6.addWidget(self.lineEdit_7, 4, 2, 1, 1)
+        self.lineEdit_6 = QtWidgets.QLineEdit(self.page_2)
+        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.gridLayout_6.addWidget(self.lineEdit_6, 0, 5, 1, 1)
+        self.lineEdit_8 = QtWidgets.QLineEdit(self.page_2)
+        self.lineEdit_8.setObjectName("lineEdit_8")
+        self.gridLayout_6.addWidget(self.lineEdit_8, 4, 5, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_6.addItem(spacerItem3, 0, 3, 1, 1)
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_6.addItem(spacerItem4, 4, 3, 1, 1)
         self.toolBox.addItem(self.page_2, "")
         self.page_3 = QtWidgets.QWidget()
+<<<<<<< HEAD
         self.page_3.setGeometry(QtCore.QRect(0, 0, 570, 56))
+=======
+        self.page_3.setGeometry(QtCore.QRect(0, 0, 558, 235))
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.page_3.setObjectName("page_3")
         self.gridLayout_7 = QtWidgets.QGridLayout(self.page_3)
         self.gridLayout_7.setObjectName("gridLayout_7")
@@ -470,6 +521,7 @@ class Ui_MainWindow(object):
         self.label_37 = QtWidgets.QLabel(self.page_3)
         self.label_37.setObjectName("label_37")
         self.gridLayout_7.addWidget(self.label_37, 0, 3, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Estab_Gossip = QtWidgets.QLineEdit(self.page_3)
         self.lineEdit_Poss_Estab_Gossip.setObjectName("lineEdit_Poss_Estab_Gossip")
         self.gridLayout_7.addWidget(self.lineEdit_Poss_Estab_Gossip, 0, 1, 1, 1)
@@ -488,13 +540,37 @@ class Ui_MainWindow(object):
         self.lineEdit_Poss_Estab_Dispensation = QtWidgets.QLineEdit(self.page_3)
         self.lineEdit_Poss_Estab_Dispensation.setObjectName("lineEdit_Poss_Estab_Dispensation")
         self.gridLayout_7.addWidget(self.lineEdit_Poss_Estab_Dispensation, 1, 4, 1, 1)
+=======
+        self.lineEdit_9 = QtWidgets.QLineEdit(self.page_3)
+        self.lineEdit_9.setObjectName("lineEdit_9")
+        self.gridLayout_7.addWidget(self.lineEdit_9, 0, 1, 1, 1)
+        self.label_39 = QtWidgets.QLabel(self.page_3)
+        self.label_39.setObjectName("label_39")
+        self.gridLayout_7.addWidget(self.label_39, 0, 0, 1, 1)
+        self.lineEdit_10 = QtWidgets.QLineEdit(self.page_3)
+        self.lineEdit_10.setObjectName("lineEdit_10")
+        self.gridLayout_7.addWidget(self.lineEdit_10, 0, 4, 1, 1)
+        self.label_40 = QtWidgets.QLabel(self.page_3)
+        self.label_40.setObjectName("label_40")
+        self.gridLayout_7.addWidget(self.label_40, 1, 3, 1, 1)
+        self.lineEdit_11 = QtWidgets.QLineEdit(self.page_3)
+        self.lineEdit_11.setObjectName("lineEdit_11")
+        self.gridLayout_7.addWidget(self.lineEdit_11, 1, 1, 1, 1)
+        self.lineEdit_12 = QtWidgets.QLineEdit(self.page_3)
+        self.lineEdit_12.setObjectName("lineEdit_12")
+        self.gridLayout_7.addWidget(self.lineEdit_12, 1, 4, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_7.addItem(spacerItem5, 0, 2, 1, 1)
         spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_7.addItem(spacerItem6, 1, 2, 1, 1)
         self.toolBox.addItem(self.page_3, "")
         self.page_4 = QtWidgets.QWidget()
+<<<<<<< HEAD
         self.page_4.setGeometry(QtCore.QRect(0, 0, 570, 56))
+=======
+        self.page_4.setGeometry(QtCore.QRect(0, 0, 558, 235))
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.page_4.setObjectName("page_4")
         self.gridLayout_8 = QtWidgets.QGridLayout(self.page_4)
         self.gridLayout_8.setObjectName("gridLayout_8")
@@ -504,15 +580,22 @@ class Ui_MainWindow(object):
         self.label_42 = QtWidgets.QLabel(self.page_4)
         self.label_42.setObjectName("label_42")
         self.gridLayout_8.addWidget(self.label_42, 1, 3, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Villainy_Tale = QtWidgets.QLineEdit(self.page_4)
         self.lineEdit_Poss_Villainy_Tale.setObjectName("lineEdit_Poss_Villainy_Tale")
         self.gridLayout_8.addWidget(self.lineEdit_Poss_Villainy_Tale, 0, 1, 1, 1)
+=======
+        self.lineEdit_13 = QtWidgets.QLineEdit(self.page_4)
+        self.lineEdit_13.setObjectName("lineEdit_13")
+        self.gridLayout_8.addWidget(self.lineEdit_13, 0, 1, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.label_44 = QtWidgets.QLabel(self.page_4)
         self.label_44.setObjectName("label_44")
         self.gridLayout_8.addWidget(self.label_44, 0, 3, 1, 1)
         self.label_43 = QtWidgets.QLabel(self.page_4)
         self.label_43.setObjectName("label_43")
         self.gridLayout_8.addWidget(self.label_43, 1, 0, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Villainy_Chart = QtWidgets.QLineEdit(self.page_4)
         self.lineEdit_Poss_Villainy_Chart.setObjectName("lineEdit_Poss_Villainy_Chart")
         self.gridLayout_8.addWidget(self.lineEdit_Poss_Villainy_Chart, 0, 4, 1, 1)
@@ -522,13 +605,28 @@ class Ui_MainWindow(object):
         self.lineEdit_Poss_Villainy_Promise = QtWidgets.QLineEdit(self.page_4)
         self.lineEdit_Poss_Villainy_Promise.setObjectName("lineEdit_Poss_Villainy_Promise")
         self.gridLayout_8.addWidget(self.lineEdit_Poss_Villainy_Promise, 1, 4, 1, 1)
+=======
+        self.lineEdit_14 = QtWidgets.QLineEdit(self.page_4)
+        self.lineEdit_14.setObjectName("lineEdit_14")
+        self.gridLayout_8.addWidget(self.lineEdit_14, 0, 4, 1, 1)
+        self.lineEdit_15 = QtWidgets.QLineEdit(self.page_4)
+        self.lineEdit_15.setObjectName("lineEdit_15")
+        self.gridLayout_8.addWidget(self.lineEdit_15, 1, 1, 1, 1)
+        self.lineEdit_16 = QtWidgets.QLineEdit(self.page_4)
+        self.lineEdit_16.setObjectName("lineEdit_16")
+        self.gridLayout_8.addWidget(self.lineEdit_16, 1, 4, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_8.addItem(spacerItem7, 0, 2, 1, 1)
         spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_8.addItem(spacerItem8, 1, 2, 1, 1)
         self.toolBox.addItem(self.page_4, "")
         self.page_6 = QtWidgets.QWidget()
+<<<<<<< HEAD
         self.page_6.setGeometry(QtCore.QRect(0, 0, 570, 80))
+=======
+        self.page_6.setGeometry(QtCore.QRect(0, 0, 558, 235))
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.page_6.setObjectName("page_6")
         self.gridLayout_9 = QtWidgets.QGridLayout(self.page_6)
         self.gridLayout_9.setObjectName("gridLayout_9")
@@ -538,14 +636,21 @@ class Ui_MainWindow(object):
         self.label_45 = QtWidgets.QLabel(self.page_6)
         self.label_45.setObjectName("label_45")
         self.gridLayout_9.addWidget(self.label_45, 0, 0, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Gratitude_Tacketies = QtWidgets.QLineEdit(self.page_6)
         self.lineEdit_Poss_Gratitude_Tacketies.setObjectName("lineEdit_Poss_Gratitude_Tacketies")
         self.gridLayout_9.addWidget(self.lineEdit_Poss_Gratitude_Tacketies, 0, 4, 1, 1)
+=======
+        self.lineEdit_18 = QtWidgets.QLineEdit(self.page_6)
+        self.lineEdit_18.setObjectName("lineEdit_18")
+        self.gridLayout_9.addWidget(self.lineEdit_18, 0, 4, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.label_47 = QtWidgets.QLabel(self.page_6)
         self.label_47.setObjectName("label_47")
         self.gridLayout_9.addWidget(self.label_47, 1, 0, 1, 1)
         spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_9.addItem(spacerItem9, 1, 2, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Gratitudes_Windward = QtWidgets.QLineEdit(self.page_6)
         self.lineEdit_Poss_Gratitudes_Windward.setObjectName("lineEdit_Poss_Gratitudes_Windward")
         self.gridLayout_9.addWidget(self.lineEdit_Poss_Gratitudes_Windward, 0, 1, 1, 1)
@@ -558,19 +663,40 @@ class Ui_MainWindow(object):
         self.lineEdit_Poss_Gratitude_NSL = QtWidgets.QLineEdit(self.page_6)
         self.lineEdit_Poss_Gratitude_NSL.setObjectName("lineEdit_Poss_Gratitude_NSL")
         self.gridLayout_9.addWidget(self.lineEdit_Poss_Gratitude_NSL, 1, 4, 1, 1)
+=======
+        self.lineEdit_17 = QtWidgets.QLineEdit(self.page_6)
+        self.lineEdit_17.setObjectName("lineEdit_17")
+        self.gridLayout_9.addWidget(self.lineEdit_17, 0, 1, 1, 1)
+        self.lineEdit_19 = QtWidgets.QLineEdit(self.page_6)
+        self.lineEdit_19.setObjectName("lineEdit_19")
+        self.gridLayout_9.addWidget(self.lineEdit_19, 1, 1, 1, 1)
+        self.label_48 = QtWidgets.QLabel(self.page_6)
+        self.label_48.setObjectName("label_48")
+        self.gridLayout_9.addWidget(self.label_48, 1, 3, 1, 1)
+        self.lineEdit_20 = QtWidgets.QLineEdit(self.page_6)
+        self.lineEdit_20.setObjectName("lineEdit_20")
+        self.gridLayout_9.addWidget(self.lineEdit_20, 1, 4, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_9.addItem(spacerItem10, 0, 2, 1, 1)
         self.label_49 = QtWidgets.QLabel(self.page_6)
         self.label_49.setObjectName("label_49")
         self.gridLayout_9.addWidget(self.label_49, 2, 0, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Gratitude_Embassy = QtWidgets.QLineEdit(self.page_6)
         self.lineEdit_Poss_Gratitude_Embassy.setObjectName("lineEdit_Poss_Gratitude_Embassy")
         self.gridLayout_9.addWidget(self.lineEdit_Poss_Gratitude_Embassy, 2, 1, 1, 1)
+=======
+        self.lineEdit_21 = QtWidgets.QLineEdit(self.page_6)
+        self.lineEdit_21.setObjectName("lineEdit_21")
+        self.gridLayout_9.addWidget(self.lineEdit_21, 2, 1, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_9.addItem(spacerItem11, 2, 2, 1, 1)
         self.label_50 = QtWidgets.QLabel(self.page_6)
         self.label_50.setObjectName("label_50")
         self.gridLayout_9.addWidget(self.label_50, 2, 3, 1, 1)
+<<<<<<< HEAD
         self.lineEdit_Poss_Gratitude_Society = QtWidgets.QLineEdit(self.page_6)
         self.lineEdit_Poss_Gratitude_Society.setObjectName("lineEdit_Poss_Gratitude_Society")
         self.gridLayout_9.addWidget(self.lineEdit_Poss_Gratitude_Society, 2, 4, 1, 1)
@@ -721,13 +847,44 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.toolBox, 0, 0, 1, 1)
         spacerItem18 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout_4.addItem(spacerItem18, 1, 0, 1, 1)
+=======
+        self.lineEdit_22 = QtWidgets.QLineEdit(self.page_6)
+        self.lineEdit_22.setObjectName("lineEdit_22")
+        self.gridLayout_9.addWidget(self.lineEdit_22, 2, 4, 1, 1)
+        self.toolBox.addItem(self.page_6, "")
+        self.page_7 = QtWidgets.QWidget()
+        self.page_7.setGeometry(QtCore.QRect(0, 0, 558, 235))
+        self.page_7.setObjectName("page_7")
+        self.toolBox.addItem(self.page_7, "")
+        self.page_8 = QtWidgets.QWidget()
+        self.page_8.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.page_8.setObjectName("page_8")
+        self.toolBox.addItem(self.page_8, "")
+        self.page_10 = QtWidgets.QWidget()
+        self.page_10.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.page_10.setObjectName("page_10")
+        self.toolBox.addItem(self.page_10, "")
+        self.page_9 = QtWidgets.QWidget()
+        self.page_9.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.page_9.setObjectName("page_9")
+        self.toolBox.addItem(self.page_9, "")
+        self.page_5 = QtWidgets.QWidget()
+        self.page_5.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.page_5.setObjectName("page_5")
+        self.toolBox.addItem(self.page_5, "")
+        self.gridLayout_4.addWidget(self.toolBox, 0, 0, 1, 1)
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.tabWidget.addTab(self.tab_2, "")
         self.verticalLayout.addWidget(self.tabWidget)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
+<<<<<<< HEAD
         self.toolBox.setCurrentIndex(0)
+=======
+        self.toolBox.setCurrentIndex(5)
+>>>>>>> Adding preliminary design for the Posessions Tab
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -814,6 +971,7 @@ class Ui_MainWindow(object):
         self.label_49.setText(_translate("MainWindow", "The Gratitude of The Embassy of Albion"))
         self.label_50.setText(_translate("MainWindow", "The Royal Society\'s Gratitude"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_6), _translate("MainWindow", "Gratitudes"))
+<<<<<<< HEAD
         self.label_52.setText(_translate("MainWindow", "Captive Guests"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_7), _translate("MainWindow", "Miscellaneous"))
         self.checkBox_Poss_Reports.setText(_translate("MainWindow", "Port Reports"))
@@ -841,6 +999,13 @@ class Ui_MainWindow(object):
         self.label_65.setText(_translate("MainWindow", "Invitation to Perdurance"))
         self.label_66.setText(_translate("MainWindow", "Experimental Modifications"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_11), _translate("MainWindow", "Albion: Miscellaneous"))
+=======
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_7), _translate("MainWindow", "Miscellaneous"))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_8), _translate("MainWindow", "Port Reports"))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_10), _translate("MainWindow", "Heirlooms"))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_9), _translate("MainWindow", "Reach: Miscellaneous"))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_5), _translate("MainWindow", "Eleutheria: Miscellaneous"))
+>>>>>>> Adding preliminary design for the Posessions Tab
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Possessions"))
 
 
