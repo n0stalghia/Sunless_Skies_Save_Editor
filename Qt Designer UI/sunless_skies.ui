@@ -756,7 +756,7 @@
           <item>
            <widget class="QLabel" name="label_28">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Checked&lt;/span&gt;: Fog of War removed&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Partially checked: &lt;/span&gt;Some parts of Fog of War removed (by natural exploration) &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Unchecked: &lt;/span&gt;Fog of War covers the whole map&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Checked&lt;/span&gt;: Fog of War removed&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Partially Checked: &lt;/span&gt;Some parts of Fog of War removed (by natural exploration) &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Unchecked: &lt;/span&gt;Fog of War covers the whole map&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -784,6 +784,13 @@
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
          <widget class="QToolBox" name="toolBox">
+          <property name="styleSheet">
+           <string notr="true">QToolBox,
+QToolBox &gt; QScrollArea,
+QToolBox &gt; QScrollArea &gt; #qt_scrollarea_viewport &gt; QWidget {
+background: transparent;
+}</string>
+          </property>
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
           </property>
@@ -791,15 +798,15 @@
            <enum>QFrame::Plain</enum>
           </property>
           <property name="currentIndex">
-           <number>5</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>235</height>
+             <width>570</width>
+             <height>56</height>
             </rect>
            </property>
            <attribute name="label">
@@ -827,10 +834,10 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="lineEdit"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Academe_Specimen"/>
             </item>
             <item row="0" column="4">
-             <widget class="QLineEdit" name="lineEdit_2"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Academe_Experiment"/>
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="label_30">
@@ -853,10 +860,10 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QLineEdit" name="lineEdit_3"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Academe_Artifact"/>
             </item>
             <item row="2" column="4">
-             <widget class="QLineEdit" name="lineEdit_4"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Academe_Enigma"/>
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer">
@@ -891,8 +898,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>235</height>
+             <width>570</width>
+             <height>56</height>
             </rect>
            </property>
            <attribute name="label">
@@ -900,7 +907,7 @@
            </attribute>
            <layout class="QGridLayout" name="gridLayout_6">
             <item row="0" column="2">
-             <widget class="QLineEdit" name="lineEdit_5"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Bohemia_SkyStory"/>
             </item>
             <item row="0" column="4">
              <widget class="QLabel" name="label_35">
@@ -931,13 +938,13 @@
              </widget>
             </item>
             <item row="4" column="2">
-             <widget class="QLineEdit" name="lineEdit_7"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Bohemia_Vision"/>
             </item>
             <item row="0" column="5">
-             <widget class="QLineEdit" name="lineEdit_6"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Bohemia_Moment"/>
             </item>
             <item row="4" column="5">
-             <widget class="QLineEdit" name="lineEdit_8"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Bohemia_Treasure"/>
             </item>
             <item row="0" column="3">
              <spacer name="horizontalSpacer_3">
@@ -972,8 +979,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>235</height>
+             <width>570</width>
+             <height>56</height>
             </rect>
            </property>
            <attribute name="label">
@@ -995,7 +1002,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="lineEdit_9"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Estab_Gossip"/>
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="label_39">
@@ -1005,7 +1012,7 @@
              </widget>
             </item>
             <item row="0" column="4">
-             <widget class="QLineEdit" name="lineEdit_10"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Estab_Benefactor"/>
             </item>
             <item row="1" column="3">
              <widget class="QLabel" name="label_40">
@@ -1015,10 +1022,10 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_11"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Estab_Permit"/>
             </item>
             <item row="1" column="4">
-             <widget class="QLineEdit" name="lineEdit_12"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Estab_Dispensation"/>
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_5">
@@ -1053,8 +1060,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>235</height>
+             <width>570</width>
+             <height>56</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1076,7 +1083,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="lineEdit_13"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Villainy_Tale"/>
             </item>
             <item row="0" column="3">
              <widget class="QLabel" name="label_44">
@@ -1093,13 +1100,13 @@
              </widget>
             </item>
             <item row="0" column="4">
-             <widget class="QLineEdit" name="lineEdit_14"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Villainy_Chart"/>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_15"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Villainy_Secret"/>
             </item>
             <item row="1" column="4">
-             <widget class="QLineEdit" name="lineEdit_16"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Villainy_Promise"/>
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_7">
@@ -1134,8 +1141,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>235</height>
+             <width>570</width>
+             <height>80</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1157,7 +1164,7 @@
              </widget>
             </item>
             <item row="0" column="4">
-             <widget class="QLineEdit" name="lineEdit_18"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Tacketies"/>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_47">
@@ -1180,10 +1187,10 @@
              </spacer>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="lineEdit_17"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Gratitudes_Windward"/>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_19"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Ministry"/>
             </item>
             <item row="1" column="3">
              <widget class="QLabel" name="label_48">
@@ -1193,7 +1200,7 @@
              </widget>
             </item>
             <item row="1" column="4">
-             <widget class="QLineEdit" name="lineEdit_20"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_NSL"/>
             </item>
             <item row="0" column="2">
              <spacer name="horizontalSpacer_9">
@@ -1216,7 +1223,7 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QLineEdit" name="lineEdit_21"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Embassy"/>
             </item>
             <item row="2" column="2">
              <spacer name="horizontalSpacer_11">
@@ -1239,7 +1246,7 @@
              </widget>
             </item>
             <item row="2" column="4">
-             <widget class="QLineEdit" name="lineEdit_22"/>
+             <widget class="QLineEdit" name="lineEdit_Poss_Gratitude_Society"/>
             </item>
            </layout>
           </widget>
@@ -1248,67 +1255,355 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>235</height>
+             <width>570</width>
+             <height>52</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Miscellaneous</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_52">
+              <property name="text">
+               <string>Captive Guests</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_Misc_Guests"/>
+            </item>
+            <item row="0" column="2">
+             <spacer name="horizontalSpacer_12">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_8">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>100</width>
-             <height>30</height>
+             <width>557</width>
+             <height>88</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Port Reports</string>
            </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QCheckBox" name="checkBox_Poss_Reports">
+              <property name="text">
+               <string>Port Reports</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_51">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Checked:&lt;/span&gt; You have one of each Port Report&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Partially Checked: &lt;/span&gt;You have some Port Reports&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Unchecked: &lt;/span&gt;You have no Port Reports&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_10">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>100</width>
-             <height>30</height>
+             <width>570</width>
+             <height>52</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Heirlooms</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="1" column="1">
+             <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Secret">
+              <property name="text">
+               <string>Heirloom: a Terrible Secret</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Wealth">
+              <property name="text">
+               <string>Heirloom: A Token of Vast Wealth</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Song">
+              <property name="text">
+               <string>Heirloom: The Song of the Sky</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QCheckBox" name="checkBox_Poss_Heirloom_Cup">
+              <property name="text">
+               <string>Heirloom: the Martyr-King's Cup</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_9">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>100</width>
-             <height>30</height>
+             <width>570</width>
+             <height>52</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Reach: Miscellaneous</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_53">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Reach: Polmear and Plenty's&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_54">
+              <property name="text">
+               <string>Tickets to the Circus</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="label_55">
+              <property name="text">
+               <string>Ambiguous Shard</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_Circus"/>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_ReachMisc_Shard"/>
+            </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_56">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Reach: Lustrum&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <spacer name="horizontalSpacer_13">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_5">
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
-             <width>100</width>
-             <height>30</height>
+             <y>-57</y>
+             <width>557</width>
+             <height>130</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Eleutheria: Miscellaneous</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_13">
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_57">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Eleutheria: House of Rods and Chains&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLabel" name="label_58">
+              <property name="text">
+               <string>Chunks of Blue Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Red"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_59">
+              <property name="text">
+               <string>Chunks of Red Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLabel" name="label_60">
+              <property name="text">
+               <string>Chunks of Green Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="4">
+             <widget class="QLabel" name="label_61">
+              <property name="text">
+               <string>Chunks of Soft Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Blue"/>
+            </item>
+            <item row="8" column="4">
+             <widget class="QLabel" name="label_62">
+              <property name="text">
+               <string>Chunks of Golden Amber</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Green"/>
+            </item>
+            <item row="8" column="5">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Golden"/>
+            </item>
+            <item row="11" column="1">
+             <widget class="QLabel" name="label_63">
+              <property name="text">
+               <string>Eleutherian Mystery</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="5">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Soft"/>
+            </item>
+            <item row="10" column="1">
+             <widget class="QLabel" name="label_64">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Miscellaneous&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="2">
+             <widget class="QLineEdit" name="lineEdit_Poss_EleuMisc_Mystery"/>
+            </item>
+            <item row="3" column="3">
+             <spacer name="horizontalSpacer_14">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="8" column="3">
+             <spacer name="horizontalSpacer_15">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_11">
+           <attribute name="label">
+            <string>Albion: Miscellaneous</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_14">
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_65">
+              <property name="text">
+               <string>Invitation to Perdurance</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_66">
+              <property name="text">
+               <string>Experimental Modifications</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QLineEdit" name="lineEdit_Poss_AlbionMisc_Invites"/>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEdit_Poss_AlbionMisc_Mods"/>
+            </item>
+            <item row="0" column="2">
+             <spacer name="horizontalSpacer_16">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </widget>
          </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
