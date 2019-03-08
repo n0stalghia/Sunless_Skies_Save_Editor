@@ -191,6 +191,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             'The Blue Kingdom'
         ))
 
+        # Possession Events
+        #Academe
+        self.ui.lineEdit_Poss_Academe_Specimen.textChanged.connect(lambda: self.update_possessions(
+            self.ui.lineEdit_Poss_Academe_Specimen,
+            131123
+        ))
+
         self.show()
 
     def open_file_dialog(self):
@@ -214,16 +221,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             INITIALIZATION = False
 
     def save_file_dialog(self):
-        options = QFileDialog.Options()
-        file_name, _ = QFileDialog.getSaveFileName(
-            self,
-            'Save',
-            SAVEFILE_PATH,
-            'Autosave (autosave_s.json);;JSON Files (*.json);;All Files (*)',
-            options=options
-        )
-        if file_name:
-            jh.save_json_file(file_name, SAVE_FILE)
+        if not ERRORS:
+            options = QFileDialog.Options()
+            file_name, _ = QFileDialog.getSaveFileName(
+                self,
+                'Save',
+                SAVEFILE_PATH,
+                'Autosave (autosave_s.json);;JSON Files (*.json);;All Files (*)',
+                options=options
+            )
+            if file_name:
+                jh.save_json_file(file_name, SAVE_FILE)
 
     def open_about_window(self):
         dialog = AboutWindow()
@@ -391,6 +399,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 selection.setStyleSheet('color: rgb(255,0,0)')
                 effective_level.setStyleSheet('color: rgb(255,0,0)')
 
+                ERRORS = True
+
+    def update_possessions(self, quality, val_id):
+        if not INITIALIZATION:
+            global ERRORS, SAVE_FILE
+
+            value = quality.text()
+
+            try:
+                value = int(value)
+                quality.setStyleSheet('color: rgb(0,0,0)')
+
+                SAVE_FILE = jh.write_possessions(SAVE_FILE, value, val_id)
+
+                ERRORS = False
+            except ValueError:
+                quality.setStyleSheet('color: rgb(255,0,0)')
                 ERRORS = True
 
     def update_current_port(self, port):

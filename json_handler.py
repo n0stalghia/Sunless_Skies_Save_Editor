@@ -14,17 +14,88 @@ def save_json_file(file_name, save_file):
         json.dump(save_file, json_file)
 
 
-def get_quality_value(save_file, val_id, key='EffectiveLevel'):
-    query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
+def get_query(save_file, val_id):
+    return next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
                   val_id), None)
+
+
+def get_quality_value(save_file, val_id, key='EffectiveLevel'):
+    query = get_query(save_file, val_id)
+
     if not query:
         return '0'
     return str(query[key]) if key in query else '0'
 
 
+def get_current_port_name(save_file):
+    region_id = save_file['GeneratedWorld']['CurrentRegionId']
+    port_id = save_file['GeneratedWorld']['CurrentPortId']
+    return PORTS[region_id]['Id'][port_id]['DisplayName']
+
+
+def get_current_region_name(save_file):
+    region_id = save_file['GeneratedWorld']['CurrentRegionId']
+    return PORTS[region_id]['Name']
+
+
+def get_port_list(save_file, selected_region=''):
+    port_list = []
+    ports = ''
+
+    if selected_region != '':
+        for region in PORTS:
+            if PORTS[region]['Name'] == selected_region:
+                ports = PORTS[region]['Id']
+    else:
+        if save_file != {}:
+            region_id = save_file['GeneratedWorld']['CurrentRegionId']
+            ports = PORTS[region_id]['Id']
+        else:
+            return ['']
+
+    for port in ports:
+        # noinspection PyTypeChecker
+        port_list.append(ports[port]['DisplayName'])
+
+    return port_list
+
+
+def get_region(save_file, region_name):
+    region_id = ''
+    for region in PORTS:
+        if PORTS[region]['Name'] == region_name:
+            region_id = region
+            break
+
+    for region in save_file['GeneratedWorld']['Regions']:
+        if region['Id'] == region_id:
+            return region
+
+
+def get_fow_state(save_file, region_name):
+    region = get_region(save_file, region_name)
+
+    if all(item != True for item in region['FogBools']):
+        state = Qt.Checked
+    elif all(item == True for item in region['FogBools']):
+        state = Qt.Unchecked
+    else:
+        state = Qt.PartiallyChecked
+
+    return state
+
+
+def get_port_reports(save_file):
+    return Qt.Unchecked # TODO implement
+
+
+def get_heirloom(save_file, param):
+    return Qt.Unchecked # TODO implement
+
+
 def write_stats(save_file, val1, val2, val_id):
-    query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
-                  val_id), None)
+    query = get_query(save_file, val_id)
+
     if not query:
         query = {
             "EffectiveLevel": val1 + val2,
@@ -63,39 +134,6 @@ def write_stats(save_file, val1, val2, val_id):
                 save_file['QualitiesPossessedList'][index] = query
 
     return save_file
-
-
-def get_current_port_name(save_file):
-    region_id = save_file['GeneratedWorld']['CurrentRegionId']
-    port_id = save_file['GeneratedWorld']['CurrentPortId']
-    return PORTS[region_id]['Id'][port_id]['DisplayName']
-
-
-def get_current_region_name(save_file):
-    region_id = save_file['GeneratedWorld']['CurrentRegionId']
-    return PORTS[region_id]['Name']
-
-
-def get_port_list(save_file, selected_region=''):
-    port_list = []
-    ports = ''
-
-    if selected_region != '':
-        for region in PORTS:
-            if PORTS[region]['Name'] == selected_region:
-                ports = PORTS[region]['Id']
-    else:
-        if save_file != {}:
-            region_id = save_file['GeneratedWorld']['CurrentRegionId']
-            ports = PORTS[region_id]['Id']
-        else:
-            return ['']
-
-    for port in ports:
-        # noinspection PyTypeChecker
-        port_list.append(ports[port]['DisplayName'])
-
-    return port_list
 
 
 def write_current_port(save_file, port_name, cache):
@@ -138,31 +176,6 @@ def write_current_port(save_file, port_name, cache):
     return save_file
 
 
-def get_region(save_file, region_name):
-    region_id = ''
-    for region in PORTS:
-        if PORTS[region]['Name'] == region_name:
-            region_id = region
-            break
-
-    for region in save_file['GeneratedWorld']['Regions']:
-        if region['Id'] == region_id:
-            return region
-
-
-def get_fow_state(save_file, region_name):
-    region = get_region(save_file, region_name)
-
-    if all(item != True for item in region['FogBools']):
-        state = Qt.Checked
-    elif all(item == True for item in region['FogBools']):
-        state = Qt.Unchecked
-    else:
-        state = Qt.PartiallyChecked
-
-    return state
-
-
 def write_fow_values(save_file, state, region_name):
     region = get_region(save_file, region_name)
     if state == Qt.Checked:
@@ -178,9 +191,44 @@ def write_fow_values(save_file, state, region_name):
     return save_file
 
 
-def get_port_reports(save_file):
-    return Qt.Unchecked
+def write_possessions(save_file, value, val_id):
+    query = get_query(save_file, val_id)
+    value = int(value)          # 0
 
+    if not query:
+        query = {
+            "EffectiveLevel": value,
+            "Level": value,
+            "AssociatedQuality": {
+                "Tag": "",
+                "Id": val_id
+            }
+        }
 
-def get_heirloom(save_file, param):
-    return Qt.Unchecked
+        save_file['QualitiesPossessedList'].append(query)
+    else:
+        elevel = query.get('EffectiveLevel', 0)
+        level = query.get('Level', 0)
+        modifier = query.get('EffectiveLevelModifier', 0)
+
+        if value == 0 and modifier != 0:
+            query['EffectiveLevel']  = modifier
+            del query['Level']
+        elif value == 0 and modifier == 0:
+            del query['Level']
+            del query['EffectiveLevel']
+            query['Name'] = ''
+        else:
+            diff = value - elevel
+            level += diff
+            if level <= 0:
+                del query['Level']
+            else:
+                query['Level'] = level
+            query['EffectiveLevel'] = value
+
+        for index, quality in enumerate(save_file['QualitiesPossessedList']):
+            if quality['AssociatedQuality']['Id'] == val_id:
+                save_file['QualitiesPossessedList'][index] = query
+
+    return save_file
