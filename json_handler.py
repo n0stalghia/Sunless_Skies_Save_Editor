@@ -276,11 +276,11 @@ def write_port_reports(save_file, state, region_name):
 
                 save_file = write_query(save_file, query)
         else:
-            if query is not None:
+            if query is not None and 'Level' in query:
                 del query['EffectiveLevel']
                 del query['Level']
 
-                save_file = write_query(save_file, query)
+            save_file = write_query(save_file, query)
 
     return save_file
 
@@ -302,10 +302,8 @@ def write_heirlooms(save_file, state, val_id):
 
             save_file['QualitiesPossessedList'].append(query)
     else:
-        if query is not None:
-            del query['EffectiveLevel']
-            del query['Level']
-
-            save_file = write_query(save_file, query)
+        for index, quality in enumerate(save_file['QualitiesPossessedList']):
+            if quality['AssociatedQuality']['Id'] == val_id:
+                del save_file['QualitiesPossessedList'][index]
 
     return save_file
