@@ -448,43 +448,43 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     sender.setText('0')
                     sender.setProperty('valid', True)
                     sender.setStyle(self.style())
-            else:
-                val_level = level.text()
-                val_modifier = modifier.text() if modifier else '0'
 
-                try:
-                    val1 = int(val_level)
-                    val2 = int(val_modifier)
+            val_level = level.text()
+            val_modifier = modifier.text() if modifier else '0'
 
-                    if val1 < 0:
-                        for sender in [level, effective_level]:
-                            sender.setProperty('valid', False)
-                            sender.setStyle(self.style())
-                        ERRORS = True
-                    elif val2 < 0:
-                        for sender in [modifier, effective_level]:
-                            sender.setProperty('valid', False)
-                            sender.setStyle(self.style())
-                        ERRORS = True
-                    else:
-                        elements = [level, effective_level]
-                        if modifier:
-                            elements.append(modifier)
+            try:
+                val1 = int(val_level)
+                val2 = int(val_modifier)
 
-                        for sender in elements:
-                            sender.setProperty('valid', True)
-                            sender.setStyle(self.style())
-
-                        effective_level.setText(str(val1 + val2))
-                        SAVE_FILE = jh.write_stats(SAVE_FILE, val1, val2, val_id)
-
-                        ERRORS = False
-                except ValueError:
-                    for sender in [selection, effective_level]:
+                if val1 < 0:
+                    for sender in [level, effective_level]:
                         sender.setProperty('valid', False)
                         sender.setStyle(self.style())
-
                     ERRORS = True
+                elif val2 < 0:
+                    for sender in [modifier, effective_level]:
+                        sender.setProperty('valid', False)
+                        sender.setStyle(self.style())
+                    ERRORS = True
+                else:
+                    elements = [level, effective_level]
+                    if modifier:
+                        elements.append(modifier)
+
+                    for sender in elements:
+                        sender.setProperty('valid', True)
+                        sender.setStyle(self.style())
+
+                    effective_level.setText(str(val1 + val2))
+                    SAVE_FILE = jh.write_stats(SAVE_FILE, val1, val2, val_id)
+
+                    ERRORS = False
+            except ValueError:
+                for sender in [selection, effective_level]:
+                    sender.setProperty('valid', False)
+                    sender.setStyle(self.style())
+
+                ERRORS = True
 
     def update_current_port(self):
         if not INITIALIZATION:
