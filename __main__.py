@@ -14,6 +14,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        if sys.platform == 'darwin':
+            self.ui.toolBox.layout().setSpacing(0)
+
         # Button Events
         self.ui.pushButton_Open.clicked.connect(self.open_file_dialog)
         self.ui.pushButton_Save.clicked.connect(self.save_file_dialog)

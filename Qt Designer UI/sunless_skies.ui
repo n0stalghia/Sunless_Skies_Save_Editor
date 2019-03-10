@@ -831,15 +831,15 @@ background: transparent;
            <number>0</number>
           </property>
           <property name="tabSpacing">
-           <number>0</number>
+           <number>6</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>76</height>
+             <width>608</width>
+             <height>69</height>
             </rect>
            </property>
            <attribute name="label">
@@ -931,8 +931,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>76</height>
+             <width>359</width>
+             <height>64</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1012,8 +1012,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>76</height>
+             <width>357</width>
+             <height>64</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1093,8 +1093,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>76</height>
+             <width>301</width>
+             <height>64</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1174,8 +1174,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>107</height>
+             <width>492</width>
+             <height>90</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1288,8 +1288,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>76</height>
+             <width>157</width>
+             <height>44</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1339,8 +1339,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>187</height>
+             <width>259</width>
+             <height>135</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1406,8 +1406,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>76</height>
+             <width>383</width>
+             <height>58</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1449,8 +1449,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>133</height>
+             <width>445</width>
+             <height>109</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1551,8 +1551,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>121</height>
+             <width>414</width>
+             <height>44</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1612,8 +1612,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>565</width>
-             <height>226</height>
+             <width>513</width>
+             <height>187</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1745,8 +1745,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>169</height>
+             <width>437</width>
+             <height>142</height>
             </rect>
            </property>
            <attribute name="label">
