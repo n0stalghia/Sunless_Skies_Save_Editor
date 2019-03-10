@@ -448,7 +448,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     sender.setText('0')
                     sender.setProperty('valid', True)
                     sender.setStyle(self.style())
-            else:
+
                 val_level = level.text()
                 val_modifier = modifier.text() if modifier else '0'
 
