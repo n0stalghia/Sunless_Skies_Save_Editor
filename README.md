@@ -1,4 +1,4 @@
-# Sunless_Skies_Save_Editor
+# Sunless Skies Save Editor
 Python-based save editor for Sunless Skies.
 
 # Usage
