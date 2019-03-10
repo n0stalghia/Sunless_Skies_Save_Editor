@@ -14,55 +14,17 @@ def save_json_file(file_name, save_file):
         json.dump(save_file, json_file)
 
 
-def get_value(save_file, key, val_id):
-    query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
-                  val_id), None)
+def get_query(save_file, val_id):
+    return next((quality for quality in save_file['QualitiesPossessedList']
+                 if quality['AssociatedQuality']['Id'] == val_id), None)
+
+
+def get_quality_value(save_file, val_id, key='Level'):
+    query = get_query(save_file, val_id)
+
     if not query:
         return '0'
     return str(query[key]) if key in query else '0'
-
-
-def write_stats(save_file, val1, val2, val_id):
-    query = next((quality for quality in save_file['QualitiesPossessedList'] if quality['AssociatedQuality']['Id'] ==
-                  val_id), None)
-    if not query:
-        query = {
-            "EffectiveLevel": val1 + val2,
-            "Level": val1,
-            "AssociatedQuality": {
-                "Tag": "",
-                "Id": val_id
-            }
-        }
-
-        if val2 != 0:
-            query['EffectiveLevelModifier'] = val2
-
-        save_file['QualitiesPossessedList'].append(query)
-    else:
-        if val1 == 0:
-            if 'Level' in query:
-                del query['Level']
-        else:
-            query['Level'] = val1
-
-        if val2 == 0:
-            if 'EffectiveLevelModifier' in query:
-                del query['EffectiveLevelModifier']
-        else:
-            query['EffectiveLevelModifier'] = val2
-
-        if (val1 + val2) == 0:
-            if 'EffectiveLevel' in query:
-                del query['EffectiveLevel']
-        else:
-            query['EffectiveLevel'] = val1 + val2
-
-        for index, quality in enumerate(save_file['QualitiesPossessedList']):
-            if quality['AssociatedQuality']['Id'] == val_id:
-                save_file['QualitiesPossessedList'][index] = query
-
-    return save_file
 
 
 def get_current_port_name(save_file):
@@ -96,6 +58,107 @@ def get_port_list(save_file, selected_region=''):
         port_list.append(ports[port]['DisplayName'])
 
     return port_list
+
+
+def get_region(save_file, region_name):
+    region_id = ''
+    for region in PORTS:
+        if PORTS[region]['Name'] == region_name:
+            region_id = region
+            break
+
+    for region in save_file['GeneratedWorld']['Regions']:
+        if region['Id'] == region_id:
+            return region
+
+
+def get_fow_state(save_file, region_name):
+    region = get_region(save_file, region_name)
+
+    if all(item is False for item in region['FogBools']):
+        state = Qt.Checked
+    elif all(item is True for item in region['FogBools']):
+        state = Qt.Unchecked
+    else:
+        state = Qt.PartiallyChecked
+
+    return state
+
+
+def get_port_reports(save_file, region_name):
+    ids = PORT_REPORT_IDS[region_name]
+    status = [False] * len(ids)
+
+    for index, port_id in enumerate(ids):
+        for quality in save_file['QualitiesPossessedList']:
+            if quality['AssociatedQuality']['Id'] == port_id:
+                if 'EffectiveLevel' in quality:
+                    status[index] = True
+                    break
+                else:
+                    break
+
+    if all(item is False for item in status):
+        return Qt.Unchecked
+    elif all(item is True for item in status):
+        return Qt.Checked
+    else:
+        return Qt.PartiallyChecked
+
+
+def get_heirloom(save_file, val_id):
+    query = get_query(save_file, val_id)
+
+    return True if query else False
+
+
+def write_query(save_file, query):
+    for index, quality in enumerate(save_file['QualitiesPossessedList']):
+        if quality['AssociatedQuality']['Id'] == query['AssociatedQuality']['Id']:
+            save_file['QualitiesPossessedList'][index] = query
+
+    return save_file
+
+
+def write_stats(save_file, val1, val2, val_id):
+    query = get_query(save_file, val_id)
+
+    if not query:
+        query = {
+            "EffectiveLevel": val1 + val2,
+            "Level": val1,
+            "AssociatedQuality": {
+                "Tag": "",
+                "Id": val_id
+            }
+        }
+
+        if val2 != 0:
+            query['EffectiveLevelModifier'] = val2
+
+        save_file['QualitiesPossessedList'].append(query)
+    else:
+        if val1 == 0:
+            if 'Level' in query:
+                del query['Level']
+        else:
+            query['Level'] = val1
+
+        if val2 == 0:
+            if 'EffectiveLevelModifier' in query:
+                del query['EffectiveLevelModifier']
+        else:
+            query['EffectiveLevelModifier'] = val2
+
+        if (val1 + val2) == 0:
+            if 'EffectiveLevel' in query:
+                del query['EffectiveLevel']
+        else:
+            query['EffectiveLevel'] = val1 + val2
+
+        save_file = write_query(save_file, query)
+
+    return save_file
 
 
 def write_current_port(save_file, port_name, cache):
@@ -138,31 +201,6 @@ def write_current_port(save_file, port_name, cache):
     return save_file
 
 
-def get_region(save_file, region_name):
-    region_id = ''
-    for region in PORTS:
-        if PORTS[region]['Name'] == region_name:
-            region_id = region
-            break
-
-    for region in save_file['GeneratedWorld']['Regions']:
-        if region['Id'] == region_id:
-            return region
-
-
-def get_fow_state(save_file, region_name):
-    region = get_region(save_file, region_name)
-
-    if all(item != True for item in region['FogBools']):
-        state = Qt.Checked
-    elif all(item == True for item in region['FogBools']):
-        state = Qt.Unchecked
-    else:
-        state = Qt.PartiallyChecked
-
-    return state
-
-
 def write_fow_values(save_file, state, region_name):
     region = get_region(save_file, region_name)
     if state == Qt.Checked:
@@ -174,5 +212,98 @@ def write_fow_values(save_file, state, region_name):
         if saved_region['Id'] == region['Id']:
             saved_region['FogBools'] = new_fow
             break
+
+    return save_file
+
+
+def write_possessions(save_file, value, val_id):
+    query = get_query(save_file, val_id)
+    value = int(value)
+
+    if not query:
+        query = {
+            "EffectiveLevel": value,
+            "Level": value,
+            "AssociatedQuality": {
+                "Tag": "",
+                "Id": val_id
+            }
+        }
+
+        save_file['QualitiesPossessedList'].append(query)
+    else:
+        modifier = query.get('EffectiveLevelModifier', 0)
+
+        if value == 0 and modifier != 0:
+            query['EffectiveLevel'] = modifier
+            if 'Level' in query:
+                del query['Level']
+        elif value == 0 and modifier == 0:
+            if 'Level' in query:
+                del query['Level']
+                del query['EffectiveLevel']
+                query['Name'] = ''
+        else:
+            query['Level'] = value
+            query['EffectiveLevel'] = value + modifier
+
+        save_file = write_query(save_file, query)
+
+    return save_file
+
+
+def write_port_reports(save_file, state, region_name):
+    for report_id in PORT_REPORT_IDS[region_name]:
+        query = get_query(save_file, report_id)
+
+        if state == Qt.Checked:
+            if query is None:
+                query = {
+                    'Name': '',
+                    'EffectiveLevel': 1,
+                    'Level': 1,
+                    'AssociatedQuality': {
+                        'Tag': '',
+                        'Id': report_id
+                    }
+                }
+
+                save_file['QualitiesPossessedList'].append(query)
+
+            else:
+                query['EffectiveLevel'] = 1
+                query['Level'] = 1
+
+                save_file = write_query(save_file, query)
+        else:
+            if query is not None and 'Level' in query:
+                del query['EffectiveLevel']
+                del query['Level']
+
+            save_file = write_query(save_file, query)
+
+    return save_file
+
+
+def write_heirlooms(save_file, state, val_id):
+    query = get_query(save_file, val_id)
+
+    if state:
+        if query is None:
+            query = {
+                'Name': '',
+                'EffectiveLevel': 1,
+                'Level': 1,
+                'AssociatedQuality': {
+                    'Tag': '',
+                    'Id': val_id
+                }
+            }
+
+            save_file['QualitiesPossessedList'].append(query)
+    else:
+        for index, quality in enumerate(save_file['QualitiesPossessedList']):
+            if quality['AssociatedQuality']['Id'] == val_id:
+                del save_file['QualitiesPossessedList'][index]
 
     return save_file
