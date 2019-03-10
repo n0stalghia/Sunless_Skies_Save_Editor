@@ -6,12 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>677</height>
+    <width>650</width>
+    <height>700</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Sunless Skies Save Editor</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit[valid=false]{color: rgb(255,0,0)}
+QLineEdit[valid=true]{color: rgb(0,0,0)}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -21,6 +31,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QPushButton" name="pushButton_Open">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="text">
            <string>Open</string>
           </property>
@@ -48,7 +61,7 @@
          <widget class="QLabel" name="label_LoadedFile">
           <property name="maximumSize">
            <size>
-            <width>90</width>
+            <width>100</width>
             <height>16777215</height>
            </size>
           </property>
@@ -405,7 +418,11 @@
          </widget>
         </item>
         <item row="1" column="3">
-         <widget class="QLineEdit" name="lineEdit_Lvl_Sovereigns"/>
+         <widget class="QLineEdit" name="lineEdit_Lvl_Sovereigns">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+         </widget>
         </item>
         <item row="12" column="3">
          <widget class="QLineEdit" name="lineEdit_Lvl_CharLvl"/>
@@ -747,7 +764,7 @@
             <item row="1" column="1">
              <widget class="QCheckBox" name="checkBox_FoW_BlueKingdom">
               <property name="text">
-               <string>The Blue  Kingdom</string>
+               <string>The Blue Kingdom</string>
               </property>
              </widget>
             </item>
@@ -756,7 +773,10 @@
           <item>
            <widget class="QLabel" name="label_28">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Checked&lt;/span&gt;: Fog of War removed&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Partially Checked: &lt;/span&gt;Some parts of Fog of War removed (by natural exploration) &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Unchecked: &lt;/span&gt;Fog of War covers the whole map&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Checked&lt;/span&gt;: Fog of War removed&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Partially Checked: &lt;/span&gt;Some parts of Fog of War removed (by natural exploration) &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Unchecked: &lt;/span&gt;Fog of War covers the whole map&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Warning:&lt;/span&gt; Removing Fog of War doesn't automatically discover all Landmarks and award you the Experience for doing so. You still will have to discover them on your own to get the Experience. Use with caution.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -783,6 +803,16 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
+         <widget class="QLabel" name="label_87">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Displaying base values. Any modifiers (such as Officers) will be applied in-game on top of the base values.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
          <widget class="QToolBox" name="toolBox">
           <property name="styleSheet">
            <string notr="true">QToolBox,
@@ -800,13 +830,16 @@ background: transparent;
           <property name="currentIndex">
            <number>0</number>
           </property>
+          <property name="tabSpacing">
+           <number>0</number>
+          </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>69</height>
+             <width>580</width>
+             <height>76</height>
             </rect>
            </property>
            <attribute name="label">
@@ -852,7 +885,7 @@ background: transparent;
             <item row="0" column="3">
              <widget class="QLabel" name="label_29">
               <property name="text">
-               <string>Condemnced Experiment</string>
+               <string>Condemned Experiment</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -898,8 +931,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>69</height>
+             <width>359</width>
+             <height>76</height>
             </rect>
            </property>
            <attribute name="label">
@@ -979,8 +1012,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>69</height>
+             <width>358</width>
+             <height>76</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1060,8 +1093,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>69</height>
+             <width>283</width>
+             <height>76</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1141,8 +1174,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>90</height>
+             <width>526</width>
+             <height>107</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1255,8 +1288,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>69</height>
+             <width>150</width>
+             <height>45</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1293,8 +1326,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>150</height>
+             <width>318</width>
+             <height>155</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1302,11 +1335,36 @@ background: transparent;
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <item>
-             <widget class="QCheckBox" name="checkBox_Poss_Reports">
-              <property name="text">
-               <string>Port Reports</string>
-              </property>
-             </widget>
+             <layout class="QGridLayout" name="gridLayout_16">
+              <item row="1" column="0">
+               <widget class="QCheckBox" name="checkBox_Poss_Reports_Albion">
+                <property name="text">
+                 <string>Albion</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QCheckBox" name="checkBox_Poss_Reports_Reach">
+                <property name="text">
+                 <string>The Reach</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QCheckBox" name="checkBox_Poss_Reports_TBK">
+                <property name="text">
+                 <string>The Blue Kingdom</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QCheckBox" name="checkBox_Poss_Reports_Eleutheria">
+                <property name="text">
+                 <string>Eleutheria</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item>
              <widget class="QLabel" name="label_51">
@@ -1335,8 +1393,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>69</height>
+             <width>465</width>
+             <height>58</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1378,8 +1436,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>541</width>
-             <height>109</height>
+             <width>450</width>
+             <height>133</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1480,8 +1538,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>541</width>
-             <height>102</height>
+             <width>445</width>
+             <height>128</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1552,8 +1610,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>558</width>
-             <height>258</height>
+             <width>514</width>
+             <height>226</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1681,6 +1739,14 @@ background: transparent;
            </layout>
           </widget>
           <widget class="QWidget" name="page_12">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>461</width>
+             <height>169</height>
+            </rect>
+           </property>
            <attribute name="label">
             <string>The Blue Kingdom: Miscellaneous</string>
            </attribute>
@@ -1831,7 +1897,7 @@ background: transparent;
           </widget>
          </widget>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0">
          <spacer name="verticalSpacer_3">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -1851,6 +1917,111 @@ background: transparent;
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>pushButton_Open</tabstop>
+  <tabstop>pushButton_Save</tabstop>
+  <tabstop>pushButton_About</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>lineEdit_Lvl_Sovereigns</tabstop>
+  <tabstop>lineEdit_Lvl_Terror</tabstop>
+  <tabstop>lineEdit_Lvl_Hull</tabstop>
+  <tabstop>lineEdit_Modifier_Hull</tabstop>
+  <tabstop>lineEdit_Lvl_Crew</tabstop>
+  <tabstop>lineEdit_Lvl_Date</tabstop>
+  <tabstop>lineEdit_Lvl_Hold</tabstop>
+  <tabstop>lineEdit_Modifier_Hold</tabstop>
+  <tabstop>lineEdit_Lvl_Hearts</tabstop>
+  <tabstop>lineEdit_Modifier_Hearts</tabstop>
+  <tabstop>lineEdit_Lvl_Veils</tabstop>
+  <tabstop>lineEdit_Modifier_Veils</tabstop>
+  <tabstop>lineEdit_Lvl_Iron</tabstop>
+  <tabstop>lineEdit_Modifier_Iron</tabstop>
+  <tabstop>lineEdit_Lvl_Mirrors</tabstop>
+  <tabstop>lineEdit_Modifier_Mirrors</tabstop>
+  <tabstop>lineEdit_Lvl_CharLvl</tabstop>
+  <tabstop>lineEdit_Lvl_CharPts</tabstop>
+  <tabstop>lineEdit_Lvl_Exp</tabstop>
+  <tabstop>lineEdit_Lvl_SecretComp</tabstop>
+  <tabstop>lineEdit_Modifier_SecretComp</tabstop>
+  <tabstop>lineEdit_Lvl_Condition</tabstop>
+  <tabstop>lineEdit_Effective_Sovereigns</tabstop>
+  <tabstop>lineEdit_Effective_Terror</tabstop>
+  <tabstop>lineEdit_Effective_Hull</tabstop>
+  <tabstop>lineEdit_Effective_Crew</tabstop>
+  <tabstop>lineEdit_Effective_Date</tabstop>
+  <tabstop>lineEdit_Effective_Hold</tabstop>
+  <tabstop>lineEdit_Effective_Hearts</tabstop>
+  <tabstop>lineEdit_Effective_Veils</tabstop>
+  <tabstop>lineEdit_Effective_Iron</tabstop>
+  <tabstop>lineEdit_Effective_Mirrors</tabstop>
+  <tabstop>lineEdit_Effective_CharLvl</tabstop>
+  <tabstop>lineEdit_Effective_CharPts</tabstop>
+  <tabstop>lineEdit_Effective_Exp</tabstop>
+  <tabstop>lineEdit_Effective_SecretComp</tabstop>
+  <tabstop>lineEdit_Effective_Condition</tabstop>
+  <tabstop>comboBox_Region</tabstop>
+  <tabstop>comboBox_Port</tabstop>
+  <tabstop>checkBox_FoW_Reach</tabstop>
+  <tabstop>checkBox_FoW_Eleutheria</tabstop>
+  <tabstop>checkBox_FoW_Albion</tabstop>
+  <tabstop>checkBox_FoW_BlueKingdom</tabstop>
+  <tabstop>lineEdit_Poss_Academe_Specimen</tabstop>
+  <tabstop>lineEdit_Poss_Academe_Experiment</tabstop>
+  <tabstop>lineEdit_Poss_Academe_Artifact</tabstop>
+  <tabstop>lineEdit_Poss_Academe_Enigma</tabstop>
+  <tabstop>lineEdit_Poss_Bohemia_SkyStory</tabstop>
+  <tabstop>lineEdit_Poss_Bohemia_Moment</tabstop>
+  <tabstop>lineEdit_Poss_Bohemia_Vision</tabstop>
+  <tabstop>lineEdit_Poss_Bohemia_Treasure</tabstop>
+  <tabstop>lineEdit_Poss_Estab_Gossip</tabstop>
+  <tabstop>lineEdit_Poss_Estab_Benefactor</tabstop>
+  <tabstop>lineEdit_Poss_Estab_Permit</tabstop>
+  <tabstop>lineEdit_Poss_Estab_Dispensation</tabstop>
+  <tabstop>lineEdit_Poss_Villainy_Tale</tabstop>
+  <tabstop>lineEdit_Poss_Villainy_Chart</tabstop>
+  <tabstop>lineEdit_Poss_Villainy_Secret</tabstop>
+  <tabstop>lineEdit_Poss_Villainy_Promise</tabstop>
+  <tabstop>lineEdit_Poss_Gratitudes_Windward</tabstop>
+  <tabstop>lineEdit_Poss_Gratitude_Tacketies</tabstop>
+  <tabstop>lineEdit_Poss_Gratitude_Ministry</tabstop>
+  <tabstop>lineEdit_Poss_Gratitude_NSL</tabstop>
+  <tabstop>lineEdit_Poss_Gratitude_Embassy</tabstop>
+  <tabstop>lineEdit_Poss_Gratitude_Society</tabstop>
+  <tabstop>lineEdit_Poss_Misc_Guests</tabstop>
+  <tabstop>checkBox_Poss_Reports_Reach</tabstop>
+  <tabstop>checkBox_Poss_Reports_Eleutheria</tabstop>
+  <tabstop>checkBox_Poss_Reports_Albion</tabstop>
+  <tabstop>checkBox_Poss_Reports_TBK</tabstop>
+  <tabstop>checkBox_Poss_Heirloom_Wealth</tabstop>
+  <tabstop>checkBox_Poss_Heirloom_Cup</tabstop>
+  <tabstop>checkBox_Poss_Heirloom_Song</tabstop>
+  <tabstop>checkBox_Poss_Heirloom_Secret</tabstop>
+  <tabstop>lineEdit_Poss_ReachMisc_Circus</tabstop>
+  <tabstop>lineEdit_Poss_ReachMisc_Shard</tabstop>
+  <tabstop>lineEdit_Poss_ReachMisc_TacketyPlate</tabstop>
+  <tabstop>lineEdit_Poss_ReachMisc_StovepipePlate</tabstop>
+  <tabstop>lineEdit_Poss_AlbionMisc_Favour</tabstop>
+  <tabstop>lineEdit_Poss_AlbionMisc_Mods</tabstop>
+  <tabstop>lineEdit_Poss_AlbionMisc_Invites</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_EmpyreanPlate</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_DouserPlate</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_Mystery</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_Scrap</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_Green</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_Red</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_Blue</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_Soft</tabstop>
+  <tabstop>lineEdit_Poss_EleuMisc_Golden</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Indulgence</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Roses</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Salt</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Flowers</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Volumes</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Incarnadine</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Verdance</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Hourglass</tabstop>
+  <tabstop>lineEdit_Poss_TBKMisc_Dominion</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
