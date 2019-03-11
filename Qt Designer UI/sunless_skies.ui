@@ -1930,7 +1930,18 @@ background: transparent;
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <item>
-           <widget class="QTableWidget" name="tableWidget_Bank"/>
+           <widget class="QTableWidget" name="tableWidget_Bank">
+            <column>
+             <property name="text">
+              <string>Cargo</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Amount</string>
+             </property>
+            </column>
+           </widget>
           </item>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_5">

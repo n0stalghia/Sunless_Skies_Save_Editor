@@ -184,3 +184,25 @@ PORT_REPORT_IDS = {
     'Eleutheria': [135149, 133505, 135474, 135477, 135946, 137442],
     'The Blue Kingdom': [138083, 138084, 138085, 139090]
 }
+
+CARGO_IDS = {
+    '131665': 'Barrel of Unseasoned Hours',
+    '131662': 'Bronzewood',
+    '131661': 'Caddy of Dried Tea',
+    '131659': 'Caged Catch',
+    '131663': 'Carefully-Packed Crate of Munitions',
+    '131740': 'Cask of Navartine Gemstones',
+    '131666': 'Crate of Nostalgic Crockery',
+    '132096': 'Fuel',
+    '131664': 'Gourd of Chorister Nectar',
+    '131657': 'Jumble of Undistinguished Souls',
+    '131667': 'Ministry-Approved Literature',
+    '131660': 'Pane of Stained Glass',
+    '131669': 'Roll of Thirsty Bombazine',
+    '131668': 'Sack of Verdant Seeds',
+    '131658': 'Selection of Immaculate Souls',
+    '132186': 'Supplies',
+    '138994': 'Hogshead of Starshine',
+    '138995': 'Trunk of Illicit Literature',
+    '138996': 'Firkin of Red Honey'
+}

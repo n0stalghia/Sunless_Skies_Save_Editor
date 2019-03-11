@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog, QDialog, QLineEdit
+from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog, QDialog, QLineEdit, QTableWidgetItem, QHeaderView
 from Windows.main_window import Ui_MainWindow
 from Windows.about_window import Ui_AboutDialog
 from Data.globals import *
@@ -14,8 +14,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        # Possessions Tab spacing for macOS
         if sys.platform == 'darwin':
             self.ui.toolBox.layout().setSpacing(0)
+
+        # Table formatting
+        header = self.ui.tableWidget_Bank.horizontalHeader()
+        header.setSectionResizeMode(0, QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
 
         # Button Events
         self.ui.pushButton_Open.clicked.connect(self.open_file_dialog)
@@ -294,6 +300,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.append_stats(save_file)
         self.append_map(save_file)
         self.append_possessions(save_file)
+        self.append_bank(save_file)
 
     def reset_stylesheet(self, element):
         element.setProperty('valid', True)
@@ -434,6 +441,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.lineEdit_Poss_TBKMisc_Verdance.setText(jh.get_quality_value(save_file, 138935))
         self.ui.lineEdit_Poss_TBKMisc_Hourglass.setText(jh.get_quality_value(save_file, 138937))
         self.ui.lineEdit_Poss_TBKMisc_Dominion.setText(jh.get_quality_value(save_file, 138938))
+
+    def append_bank(self, save_file):
+        saved_bank_items = save_file['SavedBankItems']
+        self.ui.tableWidget_Bank.setRowCount(len(save_file['SavedBankItems']))
+        for index, row in enumerate(saved_bank_items):
+            name, amount = jh.get_cargo_name(SAVE_FILE, row)
+
+            cargo_name = QTableWidgetItem()
+            cargo_name.setText(name)
+            cargo_amount = QTableWidgetItem()
+            cargo_amount.setText(amount)
+
+            self.ui.tableWidget_Bank.setItem(index, 0, cargo_name)
+            self.ui.tableWidget_Bank.setItem(index, 1, cargo_amount)
 
     def update_stats(self, level, effective_level, selection, val_id, modifier=None):
         if not INITIALIZATION:

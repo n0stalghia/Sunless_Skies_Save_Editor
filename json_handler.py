@@ -307,3 +307,9 @@ def write_heirlooms(save_file, state, val_id):
                 del save_file['QualitiesPossessedList'][index]
 
     return save_file
+
+
+def get_cargo_name(save_file, row):
+    name = CARGO_IDS.get(row, f'Unknown ID {row}')
+    amount = ''
+    return name, amount
