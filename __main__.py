@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog, QDialog, QLineEdit, QTableWidgetItem, QHeaderView
+from PyQt5.QtCore import Qt
 from Windows.main_window import Ui_MainWindow
 from Windows.about_window import Ui_AboutDialog
 from Data.globals import *
@@ -22,6 +23,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         header = self.ui.tableWidget_Bank.horizontalHeader()
         header.setSectionResizeMode(0, QHeaderView.Stretch)
         header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        header.setDefaultAlignment(Qt.AlignLeft)
 
         # Button Events
         self.ui.pushButton_Open.clicked.connect(self.open_file_dialog)
@@ -445,8 +447,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def append_bank(self, save_file):
         saved_bank_items = save_file['SavedBankItems']
         self.ui.tableWidget_Bank.setRowCount(len(save_file['SavedBankItems']))
-        for index, row in enumerate(saved_bank_items):
-            name, amount = jh.get_cargo_name(SAVE_FILE, row)
+        for index, cargo_id in enumerate(saved_bank_items):
+            name, amount = jh.get_cargo(save_file, cargo_id)
 
             cargo_name = QTableWidgetItem()
             cargo_name.setText(name)

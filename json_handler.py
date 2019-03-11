@@ -309,7 +309,7 @@ def write_heirlooms(save_file, state, val_id):
     return save_file
 
 
-def get_cargo_name(save_file, row):
-    name = CARGO_IDS.get(row, f'Unknown ID {row}')
-    amount = ''
+def get_cargo(save_file, cargo_id):
+    name = CARGO_IDS.get(cargo_id, f'Unknown ID {cargo_id}')
+    amount = str(save_file['SavedBankItems'][cargo_id])
     return name, amount
