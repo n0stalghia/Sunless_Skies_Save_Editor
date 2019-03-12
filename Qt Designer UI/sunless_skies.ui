@@ -838,8 +838,8 @@ background: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>580</width>
-             <height>77</height>
+             <width>364</width>
+             <height>76</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1960,6 +1960,9 @@ background: transparent;
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_Bank_Remove">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>50</width>

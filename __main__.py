@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog, QDialog, QLi
 from PyQt5.QtCore import Qt
 from Windows.main_window import Ui_MainWindow
 from Windows.about_window import Ui_AboutDialog
+from Windows.cargo_dialog import Ui_CargoDialog
 from Data.globals import *
 import sys
 import window_helper as wh
@@ -255,6 +256,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.lineEdit_Poss_TBKMisc_Hourglass.textChanged.connect(lambda: self.update_possessions(138937))
         self.ui.lineEdit_Poss_TBKMisc_Dominion.textChanged.connect(lambda: self.update_possessions(138938))
 
+        # Bank
+        self.ui.tableWidget_Bank.itemSelectionChanged.connect(lambda: self.ui.pushButton_Bank_Remove.setEnabled(True))
+        self.ui.pushButton_Bank_Add.clicked.connect(lambda: self.show_cargo_dialog())
+        self.ui.pushButton_Bank_Remove.clicked.connect(lambda: self.remove_cargo())
+
         self.show()
 
     def open_file_dialog(self):
@@ -396,7 +402,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.lineEdit_Poss_Villainy_Secret.setText(jh.get_quality_value(save_file, 131120))
         self.ui.lineEdit_Poss_Villainy_Chart.setText(jh.get_quality_value(save_file, 131121))
         self.ui.lineEdit_Poss_Villainy_Promise.setText(jh.get_quality_value(save_file, 131122))
-        # Gratitudes
+        # Favours
         self.ui.lineEdit_Poss_Gratitudes_Windward.setText(jh.get_quality_value(save_file, 132085))
         self.ui.lineEdit_Poss_Gratitude_Tacketies.setText(jh.get_quality_value(save_file, 132124))
         self.ui.lineEdit_Poss_Gratitude_Ministry.setText(jh.get_quality_value(save_file, 135546))
@@ -452,6 +458,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             cargo_name = QTableWidgetItem()
             cargo_name.setText(name)
+            cargo_name.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
             cargo_amount = QTableWidgetItem()
             cargo_amount.setText(amount)
 
@@ -555,6 +562,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.comboBox_Port.clear()
         self.ui.comboBox_Port.addItems(jh.get_port_list(SAVE_FILE, region))
 
+    def show_cargo_dialog(self):
+        dialog = CargoDialog()
+        dialog.exec_()
+
+    def remove_cargo(self):
+        pass
+
 
 class AboutWindow(QDialog, Ui_AboutDialog):
     def __init__(self):
@@ -567,6 +581,16 @@ class AboutWindow(QDialog, Ui_AboutDialog):
         self.ui.label_About_License.setOpenExternalLinks(True)
 
         self.ui.pushButton_About_Close.clicked.connect(self.close)
+
+        self.show()
+
+
+class CargoDialog(QDialog, Ui_CargoDialog):
+    def __init__(self):
+        super(QDialog, self).__init__()
+
+        self.ui = Ui_CargoDialog()
+        self.ui.setupUi(self)
 
         self.show()
 
