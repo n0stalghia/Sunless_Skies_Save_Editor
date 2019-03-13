@@ -107,6 +107,13 @@ QLabel[valid=true]{color: rgb(0,0,0)}</string>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_Cargo_ID</tabstop>
+  <tabstop>lineEdit_Cargo_Amount</tabstop>
+  <tabstop>listWidget_Cargo</tabstop>
+  <tabstop>pushButton_Add</tabstop>
+  <tabstop>pushButton_Discard</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

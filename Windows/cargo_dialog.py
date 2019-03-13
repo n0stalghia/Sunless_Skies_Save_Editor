@@ -58,6 +58,10 @@ class Ui_CargoDialog(object):
 
         self.retranslateUi(CargoDialog)
         QtCore.QMetaObject.connectSlotsByName(CargoDialog)
+        CargoDialog.setTabOrder(self.lineEdit_Cargo_ID, self.lineEdit_Cargo_Amount)
+        CargoDialog.setTabOrder(self.lineEdit_Cargo_Amount, self.listWidget_Cargo)
+        CargoDialog.setTabOrder(self.listWidget_Cargo, self.pushButton_Add)
+        CargoDialog.setTabOrder(self.pushButton_Add, self.pushButton_Discard)
 
     def retranslateUi(self, CargoDialog):
         _translate = QtCore.QCoreApplication.translate
