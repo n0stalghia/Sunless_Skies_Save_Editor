@@ -468,6 +468,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.tableWidget_Bank.setItem(index, 0, cargo_name)
             self.ui.tableWidget_Bank.setItem(index, 1, cargo_amount)
 
+    def validated(self, sender, value, zero_allowed=False):
+        global ERRORS
+
+        if value == '' and zero_allowed:
+            value = '0'
+            self.sender().setText('0')
+
+        try:
+            integer = int(value)
+            if (zero_allowed and integer < 0) or (not zero_allowed and integer <= 0):
+                sender.setProperty('valid', False)
+                sender.setStyle(self.style())
+                return False
+            # elif not zero_allowed and integer <= 0:
+            #     sender.setProperty('valid', False)
+            #     sender.setStyle(self.style())
+            #     return False
+            else:
+                sender.setProperty('valid', True)
+                sender.setStyle(self.style())
+                return True
+        except ValueError:
+            sender.setProperty('valid', False)
+            sender.setStyle(self.style())
+            ERRORS = True
+            return False
+
     def update_stats(self, level, effective_level, selection, val_id, modifier=None):
         if not INITIALIZATION:
             global ERRORS, SAVE_FILE
@@ -532,22 +559,25 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def update_possessions(self, val_id):
         if not INITIALIZATION:
             global ERRORS, SAVE_FILE
-            value = self.sender().text()
-            if value == '':
-                self.sender().setText('0')
-            else:
-                try:
-                    value = int(value)
-                    if value >= 0:
-                        self.sender().setStyleSheet('color: rgb(0,0,0)')
-                        jh.write_possessions(SAVE_FILE, value, val_id)
-                        ERRORS = False
-                    else:
-                        self.sender().setStyleSheet('color: rgb(255,0,0)')
-                        ERRORS = True
-                except ValueError:
-                    self.sender().setStyleSheet('color: rgb(255,0,0)')
-                    ERRORS = True
+
+            if self.validated(self.sender(), self.sender().text(), True):
+                jh.write_possessions(SAVE_FILE, int(self.sender().text()), val_id)
+            # value = self.sender().text()
+            # if value == '':
+            #     self.sender().setText('0')
+            # else:
+            #     try:
+            #         value = int(value)
+            #         if value >= 0:
+            #             self.sender().setStyleSheet('color: rgb(0,0,0)')
+            #             jh.write_possessions(SAVE_FILE, value, val_id)
+            #             ERRORS = False
+            #         else:
+            #             self.sender().setStyleSheet('color: rgb(255,0,0)')
+            #             ERRORS = True
+            #     except ValueError:
+            #         self.sender().setStyleSheet('color: rgb(255,0,0)')
+            #         ERRORS = True
 
     def update_port_reports(self, region_name):
         if not INITIALIZATION:
@@ -571,7 +601,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             rows = self.ui.tableWidget_Bank.rowCount()
 
             cargo_name = QTableWidgetItem()
-            cargo_name.setText(CARGO_IDS[dialog.cargo[0]])
+            cargo_name.setText(CARGO_IDS.get(dialog.cargo[0], dialog.cargo[0]))
             cargo_name.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
             cargo_amount = QTableWidgetItem()
             cargo_amount.setText(dialog.cargo[1])
@@ -591,16 +621,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         cargo_id = jh.get_cargo_id(cargo_name)
         jh.remove_cargo(SAVE_FILE, cargo_id)
         self.ui.tableWidget_Bank.removeRow(row)
+        self.ui.tableWidget_Bank.setCurrentCell(row-1, 0)
 
     def update_cargo(self):
         if not INITIALIZATION:
             global SAVE_FILE
             row = self.sender().currentRow()
-
+            
             cargo_name = self.sender().item(row, 0).text()
-            cargo = [jh.get_cargo_id(cargo_name), self.sender().item(row, 1).text()]
+            cargo_amount = self.sender().item(row, 1).text()
+            if self.validated(self.sender(), cargo_amount):
+                cargo = [jh.get_cargo_id(cargo_name), self.sender().item(row, 1).text()]
 
-            jh.write_cargo(SAVE_FILE, cargo)
+                jh.write_cargo(SAVE_FILE, cargo)
 
 
 class AboutWindow(QDialog, Ui_AboutDialog):
