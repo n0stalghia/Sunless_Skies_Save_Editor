@@ -13,7 +13,7 @@ def get_file_path(platform):
         appdata = os.getenv('APPDATA')
         arr = appdata.split(separator)
         del arr[-1]
-        appdata = separator.join(arr) + '\LocalLow\Failbetter Games\Sunless Skies\storage\characterrepository'
+        appdata = separator.join(arr) + r'\LocalLow\Failbetter Games\Sunless Skies\storage\characterrepository'
         return appdata
 
 

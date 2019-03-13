@@ -20,8 +20,15 @@
    <string>Sunless Skies Save Editor</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QLineEdit[valid=false]{color: rgb(255,0,0)}
-QLineEdit[valid=true]{color: rgb(0,0,0)}</string>
+   <string notr="true">QLineEdit[valid=false]{
+	color: red
+}
+QLineEdit[valid=true]{
+	color: black
+}
+
+
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -1997,7 +2004,7 @@ background: transparent;
         <item>
          <widget class="QLabel" name="label_89">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Since not all IDs can be assigned to the correct item in-game name right now, some values will be displayed only with an ID.&lt;/p&gt;&lt;p&gt;Proper names will be added in a future update when more IDs are datamined and can be assigned to items/weapons.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Since not all IDs can be assigned to the correct item in-game name right now, some values will be displayed only with an ID.&lt;/p&gt;&lt;p&gt;Proper names will be added in a future update when more IDs are datamined and can be assigned to items/weapons.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Zero values not allowed. Delete the cargo if you need to remove something from the bank.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>

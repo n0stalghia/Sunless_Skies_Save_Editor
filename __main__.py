@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog, QDialog, QLineEdit, QTableWidgetItem, QHeaderView
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QBrush
 from Windows.main_window import Ui_MainWindow
 from Windows.about_window import Ui_AboutDialog
 from Windows.cargo_dialog import Ui_CargoDialog
@@ -285,7 +286,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             SAVE_FILE = jh.open_json_file(file_name)
             CACHED_SAVEFILE = SAVE_FILE
             self.initialize_values(SAVE_FILE)
-            ERRORS = False
+            ERRORS = []
             INITIALIZATION = False
 
     def save_file_dialog(self):
@@ -300,6 +301,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
             if file_name:
                 jh.save_json_file(file_name, SAVE_FILE)
+
+    def set_style(self, sender, is_valid):
+        if type(sender) is QLineEdit:
+            sender.setProperty('valid', is_valid)
+            sender.setStyle(self.style())
+        elif type(sender) is QTableWidgetItem:
+            if is_valid is True:
+                sender.setForeground(QBrush(Qt.black))
+            else:
+                sender.setForeground(QBrush(Qt.red))
 
     def open_about_window(self):
         dialog = AboutWindow()
@@ -468,30 +479,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.tableWidget_Bank.setItem(index, 0, cargo_name)
             self.ui.tableWidget_Bank.setItem(index, 1, cargo_amount)
 
-    def validated(self, sender, value, zero_allowed=False):
+    def validated(self, sender, zero_allowed=False):
         global ERRORS
+        value = sender.text()
 
         if value == '' and zero_allowed:
             value = '0'
-            self.sender().setText('0')
+            sender.setText('0')
 
         try:
             integer = int(value)
             if (zero_allowed and integer < 0) or (not zero_allowed and integer <= 0):
-                sender.setProperty('valid', False)
-                sender.setStyle(self.style())
+                self.set_style(sender, False)
+                ERRORS = True
                 return False
-            # elif not zero_allowed and integer <= 0:
-            #     sender.setProperty('valid', False)
-            #     sender.setStyle(self.style())
-            #     return False
             else:
-                sender.setProperty('valid', True)
-                sender.setStyle(self.style())
+                self.set_style(sender, True)
+                ERRORS = False
                 return True
         except ValueError:
-            sender.setProperty('valid', False)
-            sender.setStyle(self.style())
+            self.set_style(sender, False)
             ERRORS = True
             return False
 
@@ -558,26 +565,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def update_possessions(self, val_id):
         if not INITIALIZATION:
-            global ERRORS, SAVE_FILE
+            global SAVE_FILE
 
-            if self.validated(self.sender(), self.sender().text(), True):
+            if self.validated(self.sender(), True):
                 jh.write_possessions(SAVE_FILE, int(self.sender().text()), val_id)
-            # value = self.sender().text()
-            # if value == '':
-            #     self.sender().setText('0')
-            # else:
-            #     try:
-            #         value = int(value)
-            #         if value >= 0:
-            #             self.sender().setStyleSheet('color: rgb(0,0,0)')
-            #             jh.write_possessions(SAVE_FILE, value, val_id)
-            #             ERRORS = False
-            #         else:
-            #             self.sender().setStyleSheet('color: rgb(255,0,0)')
-            #             ERRORS = True
-            #     except ValueError:
-            #         self.sender().setStyleSheet('color: rgb(255,0,0)')
-            #         ERRORS = True
 
     def update_port_reports(self, region_name):
         if not INITIALIZATION:
@@ -595,9 +586,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.comboBox_Port.addItems(jh.get_port_list(SAVE_FILE, region))
 
     def add_cargo(self):
-        global SAVE_FILE
+        global SAVE_FILE, ADDING_CARGO
         dialog = CargoDialog()
         if dialog.exec_() == QDialog.Accepted:
+            ADDING_CARGO = True
             rows = self.ui.tableWidget_Bank.rowCount()
 
             cargo_name = QTableWidgetItem()
@@ -611,6 +603,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.tableWidget_Bank.setItem(rows, 1, cargo_amount)
 
             jh.write_cargo(SAVE_FILE, dialog.cargo)
+            ADDING_CARGO = False
 
         dialog.deleteLater()
 
@@ -624,13 +617,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.tableWidget_Bank.setCurrentCell(row-1, 0)
 
     def update_cargo(self):
-        if not INITIALIZATION:
+        if not INITIALIZATION and not ADDING_CARGO:
             global SAVE_FILE
             row = self.sender().currentRow()
             
             cargo_name = self.sender().item(row, 0).text()
-            cargo_amount = self.sender().item(row, 1).text()
-            if self.validated(self.sender(), cargo_amount):
+            if self.validated(self.sender().item(row, 1)):
                 cargo = [jh.get_cargo_id(cargo_name), self.sender().item(row, 1).text()]
 
                 jh.write_cargo(SAVE_FILE, cargo)

@@ -14,8 +14,15 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(650, 700)
         MainWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        MainWindow.setStyleSheet("QLineEdit[valid=false]{color: rgb(255,0,0)}\n"
-"QLineEdit[valid=true]{color: rgb(0,0,0)}")
+        MainWindow.setStyleSheet("QLineEdit[valid=false]{\n"
+"    color: red\n"
+"}\n"
+"QLineEdit[valid=true]{\n"
+"    color: black\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -1154,7 +1161,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Amount"))
         self.pushButton_Bank_Add.setText(_translate("MainWindow", "+"))
         self.pushButton_Bank_Remove.setText(_translate("MainWindow", "-"))
-        self.label_89.setText(_translate("MainWindow", "<html><head/><body><p>Since not all IDs can be assigned to the correct item in-game name right now, some values will be displayed only with an ID.</p><p>Proper names will be added in a future update when more IDs are datamined and can be assigned to items/weapons.</p></body></html>"))
+        self.label_89.setText(_translate("MainWindow", "<html><head/><body><p>Since not all IDs can be assigned to the correct item in-game name right now, some values will be displayed only with an ID.</p><p>Proper names will be added in a future update when more IDs are datamined and can be assigned to items/weapons.</p><p><span style=\" font-weight:600;\">Zero values not allowed. Delete the cargo if you need to remove something from the bank.</span></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Bank"))
 
 
