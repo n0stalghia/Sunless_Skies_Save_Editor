@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/Users/mark/PycharmProjects/Sunless Skies Save Editor/Qt Designer UI/cargo_dialog.ui'
+# Form implementation generated from reading ui file 'cargo_dialog.ui'
 #
 # Created by: PyQt5 UI code generator 5.12
 #
@@ -13,49 +13,60 @@ class Ui_CargoDialog(object):
     def setupUi(self, CargoDialog):
         CargoDialog.setObjectName("CargoDialog")
         CargoDialog.resize(384, 350)
+        CargoDialog.setStyleSheet("QLineEdit[valid=false]{color: rgb(255,0,0)}\n"
+"QLineEdit[valid=true]{color: rgb(0,0,0)}\n"
+"QLabel[valid=false]{color: rgb(255,0,0)}\n"
+"QLabel[valid=true]{color: rgb(0,0,0)}")
         self.verticalLayout = QtWidgets.QVBoxLayout(CargoDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
-        self.lineEdit_2 = QtWidgets.QLineEdit(CargoDialog)
-        self.lineEdit_2.setMaximumSize(QtCore.QSize(50, 16777215))
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.gridLayout.addWidget(self.lineEdit_2, 1, 1, 1, 1)
-        self.lineEdit = QtWidgets.QLineEdit(CargoDialog)
-        self.lineEdit.setMinimumSize(QtCore.QSize(0, 0))
-        self.lineEdit.setObjectName("lineEdit")
-        self.gridLayout.addWidget(self.lineEdit, 1, 0, 1, 1)
-        self.label = QtWidgets.QLabel(CargoDialog)
-        self.label.setObjectName("label")
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-        self.label_2 = QtWidgets.QLabel(CargoDialog)
-        self.label_2.setObjectName("label_2")
-        self.gridLayout.addWidget(self.label_2, 0, 1, 1, 1)
+        self.lineEdit_Cargo_Amount = QtWidgets.QLineEdit(CargoDialog)
+        self.lineEdit_Cargo_Amount.setMaximumSize(QtCore.QSize(50, 16777215))
+        self.lineEdit_Cargo_Amount.setObjectName("lineEdit_Cargo_Amount")
+        self.gridLayout.addWidget(self.lineEdit_Cargo_Amount, 1, 1, 1, 1)
+        self.lineEdit_Cargo_ID = QtWidgets.QLineEdit(CargoDialog)
+        self.lineEdit_Cargo_ID.setMinimumSize(QtCore.QSize(0, 0))
+        self.lineEdit_Cargo_ID.setObjectName("lineEdit_Cargo_ID")
+        self.gridLayout.addWidget(self.lineEdit_Cargo_ID, 1, 0, 1, 1)
+        self.label_Cargo_ID = QtWidgets.QLabel(CargoDialog)
+        self.label_Cargo_ID.setObjectName("label_Cargo_ID")
+        self.gridLayout.addWidget(self.label_Cargo_ID, 0, 0, 1, 1)
+        self.label_Amount = QtWidgets.QLabel(CargoDialog)
+        self.label_Amount.setObjectName("label_Amount")
+        self.gridLayout.addWidget(self.label_Amount, 0, 1, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
-        self.listWidget = QtWidgets.QListWidget(CargoDialog)
-        self.listWidget.setObjectName("listWidget")
-        self.verticalLayout.addWidget(self.listWidget)
-        self.label_3 = QtWidgets.QLabel(CargoDialog)
-        self.label_3.setWordWrap(True)
-        self.label_3.setObjectName("label_3")
-        self.verticalLayout.addWidget(self.label_3)
-        self.buttonBox = QtWidgets.QDialogButtonBox(CargoDialog)
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
-        self.verticalLayout.addWidget(self.buttonBox)
+        self.listWidget_Cargo = QtWidgets.QListWidget(CargoDialog)
+        self.listWidget_Cargo.setObjectName("listWidget_Cargo")
+        self.verticalLayout.addWidget(self.listWidget_Cargo)
+        self.label_Info = QtWidgets.QLabel(CargoDialog)
+        self.label_Info.setWordWrap(True)
+        self.label_Info.setObjectName("label_Info")
+        self.verticalLayout.addWidget(self.label_Info)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.pushButton_Add = QtWidgets.QPushButton(CargoDialog)
+        self.pushButton_Add.setEnabled(False)
+        self.pushButton_Add.setObjectName("pushButton_Add")
+        self.horizontalLayout.addWidget(self.pushButton_Add)
+        self.pushButton_Discard = QtWidgets.QPushButton(CargoDialog)
+        self.pushButton_Discard.setObjectName("pushButton_Discard")
+        self.horizontalLayout.addWidget(self.pushButton_Discard)
+        self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.retranslateUi(CargoDialog)
-        self.buttonBox.accepted.connect(CargoDialog.accept)
-        self.buttonBox.rejected.connect(CargoDialog.reject)
         QtCore.QMetaObject.connectSlotsByName(CargoDialog)
 
     def retranslateUi(self, CargoDialog):
         _translate = QtCore.QCoreApplication.translate
-        CargoDialog.setWindowTitle(_translate("CargoDialog", "Dialog"))
-        self.label.setText(_translate("CargoDialog", "Cargo ID"))
-        self.label_2.setText(_translate("CargoDialog", "Amount"))
-        self.label_3.setText(_translate("CargoDialog", "Select an ID from the list above or provide a custom ID if what you\'re looking for is not present in the list"))
+        CargoDialog.setWindowTitle(_translate("CargoDialog", "Add Cargo"))
+        self.label_Cargo_ID.setText(_translate("CargoDialog", "Cargo ID"))
+        self.label_Amount.setText(_translate("CargoDialog", "Amount"))
+        self.label_Info.setText(_translate("CargoDialog", "Select an item from the list above or provide a custom ID if what you\'re looking for is not present in the list"))
+        self.pushButton_Add.setText(_translate("CargoDialog", "Add"))
+        self.pushButton_Discard.setText(_translate("CargoDialog", "Discard"))
 
 
 

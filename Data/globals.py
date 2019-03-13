@@ -204,5 +204,17 @@ CARGO_IDS = {
     '132186': 'Supplies',
     '138994': 'Hogshead of Starshine',
     '138995': 'Trunk of Illicit Literature',
-    '138996': 'Firkin of Red Honey'
+    '138996': 'Firkin of Red Honey',
+    '137211': 'Caminus Yards \'Blackjape\'',
+    '137212': 'Cotterell & Hathersage \'Vala\'',
+    '139073': 'Wit & Winegar \'Zounderkite\'',
+    '139070': 'Portsmouth House \'Her Renewed Majesty\'s Jubilee',
+    '137213': 'Cominus Yards \'Saintfire\'',
+    '137214': 'Cotterell & Hathersage \'Golgonooza\'',
+    '137196': 'Reclaimed Marauder Mangonel',
+    '137197': 'The Uninvited',
+    '137198': 'The Tears of Astolat',
+    '137199': 'The Wrath of Heaven'
 }
+
+POSSIBLE_CARGO = {}

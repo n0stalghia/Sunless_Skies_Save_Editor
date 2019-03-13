@@ -258,8 +258,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Bank
         self.ui.tableWidget_Bank.itemSelectionChanged.connect(lambda: self.ui.pushButton_Bank_Remove.setEnabled(True))
-        self.ui.pushButton_Bank_Add.clicked.connect(lambda: self.show_cargo_dialog())
+        self.ui.pushButton_Bank_Add.clicked.connect(lambda: self.add_cargo())
         self.ui.pushButton_Bank_Remove.clicked.connect(lambda: self.remove_cargo())
+        self.ui.tableWidget_Bank.itemChanged.connect(lambda: self.update_cargo())
 
         self.show()
 
@@ -303,6 +304,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def open_about_window(self):
         dialog = AboutWindow()
         dialog.exec_()
+        dialog.deleteLater()
 
     def initialize_values(self, save_file):
         self.append_stats(save_file)
@@ -452,9 +454,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def append_bank(self, save_file):
         saved_bank_items = save_file['SavedBankItems']
+        self.ui.pushButton_Bank_Add.setEnabled(True)
         self.ui.tableWidget_Bank.setRowCount(len(save_file['SavedBankItems']))
         for index, cargo_id in enumerate(saved_bank_items):
-            name, amount = jh.get_cargo(save_file, cargo_id)
+            name, amount = jh.get_saved_bank_items(save_file, cargo_id)
 
             cargo_name = QTableWidgetItem()
             cargo_name.setText(name)
@@ -506,7 +509,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         sender.setStyle(self.style())
 
                     effective_level.setText(str(val1 + val2))
-                    SAVE_FILE = jh.write_stats(SAVE_FILE, val1, val2, val_id)
+                    jh.write_stats(SAVE_FILE, val1, val2, val_id)
 
                     ERRORS = False
             except ValueError:
@@ -518,14 +521,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def update_current_port(self):
         if not INITIALIZATION:
-
             global SAVE_FILE
-            SAVE_FILE = jh.write_current_port(SAVE_FILE, self.sender().currentText(), CACHED_SAVEFILE)
+            jh.write_current_port(SAVE_FILE, self.sender().currentText(), CACHED_SAVEFILE)
 
     def update_fow_state(self, region):
         if not INITIALIZATION:
             global SAVE_FILE
-            SAVE_FILE = jh.write_fow_values(SAVE_FILE, self.sender().checkState(), region)
+            jh.write_fow_values(SAVE_FILE, self.sender().checkState(), region)
 
     def update_possessions(self, val_id):
         if not INITIALIZATION:
@@ -538,7 +540,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     value = int(value)
                     if value >= 0:
                         self.sender().setStyleSheet('color: rgb(0,0,0)')
-                        SAVE_FILE = jh.write_possessions(SAVE_FILE, value, val_id)
+                        jh.write_possessions(SAVE_FILE, value, val_id)
                         ERRORS = False
                     else:
                         self.sender().setStyleSheet('color: rgb(255,0,0)')
@@ -562,12 +564,43 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.comboBox_Port.clear()
         self.ui.comboBox_Port.addItems(jh.get_port_list(SAVE_FILE, region))
 
-    def show_cargo_dialog(self):
+    def add_cargo(self):
+        global SAVE_FILE
         dialog = CargoDialog()
-        dialog.exec_()
+        if dialog.exec_() == QDialog.Accepted:
+            rows = self.ui.tableWidget_Bank.rowCount()
+
+            cargo_name = QTableWidgetItem()
+            cargo_name.setText(CARGO_IDS[dialog.cargo[0]])
+            cargo_name.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
+            cargo_amount = QTableWidgetItem()
+            cargo_amount.setText(dialog.cargo[1])
+
+            self.ui.tableWidget_Bank.insertRow(rows)
+            self.ui.tableWidget_Bank.setItem(rows, 0, cargo_name)
+            self.ui.tableWidget_Bank.setItem(rows, 1, cargo_amount)
+
+            jh.write_cargo(SAVE_FILE, dialog.cargo)
+
+        dialog.deleteLater()
 
     def remove_cargo(self):
-        pass
+        global SAVE_FILE
+        row = self.ui.tableWidget_Bank.currentRow()
+        cargo_name = self.ui.tableWidget_Bank.item(row, 0).text()
+        cargo_id = jh.get_cargo_id(cargo_name)
+        jh.remove_cargo(SAVE_FILE, cargo_id)
+        self.ui.tableWidget_Bank.removeRow(row)
+
+    def update_cargo(self):
+        if not INITIALIZATION:
+            global SAVE_FILE
+            row = self.sender().currentRow()
+
+            cargo_name = self.sender().item(row, 0).text()
+            cargo = [jh.get_cargo_id(cargo_name), self.sender().item(row, 1).text()]
+
+            jh.write_cargo(SAVE_FILE, cargo)
 
 
 class AboutWindow(QDialog, Ui_AboutDialog):
@@ -587,12 +620,50 @@ class AboutWindow(QDialog, Ui_AboutDialog):
 
 class CargoDialog(QDialog, Ui_CargoDialog):
     def __init__(self):
+        global POSSIBLE_CARGO
         super(QDialog, self).__init__()
 
         self.ui = Ui_CargoDialog()
         self.ui.setupUi(self)
 
-        self.show()
+        self.cargo = ['key', 'value']
+
+        # Generate list of possilbe cargo from known IDs
+        POSSIBLE_CARGO = jh.get_possible_cargo(SAVE_FILE)
+        self.ui.listWidget_Cargo.addItems(jh.get_cargo_list(POSSIBLE_CARGO))
+
+        # Item selection handling
+        self.ui.listWidget_Cargo.itemSelectionChanged.connect(lambda: self.get_current_item_ID())
+
+        # Amount handling
+        self.ui.lineEdit_Cargo_Amount.textChanged.connect(lambda: self.analyze_amount())
+
+        # Button handling
+        self.ui.pushButton_Discard.clicked.connect(self.close)
+        self.ui.pushButton_Add.clicked.connect(lambda: self.append_cargo())
+
+    def get_current_item_ID(self):
+        cargo_name = self.ui.listWidget_Cargo.currentItem().text()
+        self.ui.lineEdit_Cargo_ID.setText(jh.get_cargo_id(cargo_name))
+
+    def analyze_amount(self):
+        try:
+            value = int(self.sender().text())
+            if value != 0:
+                self.ui.pushButton_Add.setEnabled(True)
+                self.sender().setProperty('valid', True)
+            else:
+                self.ui.pushButton_Add.setEnabled(False)
+                self.sender().setProperty('valid', False)
+        except:
+            self.sender().setProperty('valid', False)
+            self.ui.pushButton_Add.setEnabled(False)
+
+        self.sender().setStyle(self.style())
+
+    def append_cargo(self):
+        self.cargo = [self.ui.lineEdit_Cargo_ID.text(), self.ui.lineEdit_Cargo_Amount.text()]
+        self.accept()
 
 
 if __name__ == '__main__':

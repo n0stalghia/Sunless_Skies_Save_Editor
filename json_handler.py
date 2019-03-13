@@ -309,7 +309,40 @@ def write_heirlooms(save_file, state, val_id):
     return save_file
 
 
-def get_cargo(save_file, cargo_id):
-    name = CARGO_IDS.get(cargo_id, f'Unknown ID {cargo_id}')
+def get_saved_bank_items(save_file, cargo_id):
+    name = CARGO_IDS.get(cargo_id, cargo_id)
     amount = str(save_file['SavedBankItems'][cargo_id])
     return name, amount
+
+
+def get_possible_cargo(save_file):
+    possible_cargo = {}
+    for cargo_id in CARGO_IDS:
+        if cargo_id not in save_file['SavedBankItems']:
+            possible_cargo[cargo_id] = CARGO_IDS[cargo_id]
+    return possible_cargo
+
+
+def get_cargo_list(possible_cargo):
+    cargo_list = []
+    for cargo_id in possible_cargo:
+        cargo_list.append(CARGO_IDS[cargo_id])
+    return cargo_list
+
+
+def get_cargo_id(cargo_name):
+    return next((cargo_id for cargo_id in CARGO_IDS if CARGO_IDS[cargo_id] == cargo_name), cargo_name)
+
+
+def write_cargo(save_file, cargo):
+    if cargo[0] not in save_file['SavedBankItems']:
+        save_file['SavedBankItems'][cargo[0]] = int(cargo[1])
+    else:
+        save_file['SavedBankItems'].update({cargo[0]: int(cargo[1])})
+    return save_file
+
+
+def remove_cargo(save_file, cargo_id):
+    del save_file['SavedBankItems'][cargo_id]
+    return save_file
+
