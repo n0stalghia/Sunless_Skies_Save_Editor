@@ -12,13 +12,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_AboutDialog(object):
     def setupUi(self, AboutDialog):
         AboutDialog.setObjectName("AboutDialog")
-        AboutDialog.resize(300, 300)
+        AboutDialog.resize(400, 325)
         self.verticalLayout = QtWidgets.QVBoxLayout(AboutDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label_Version = QtWidgets.QLabel(AboutDialog)
         self.label_Version.setObjectName("label_Version")
         self.verticalLayout.addWidget(self.label_Version)
-        spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.verticalLayout.addItem(spacerItem)
         self.label_About_License = QtWidgets.QLabel(AboutDialog)
         self.label_About_License.setMinimumSize(QtCore.QSize(0, 0))
@@ -43,7 +43,7 @@ class Ui_AboutDialog(object):
         _translate = QtCore.QCoreApplication.translate
         AboutDialog.setWindowTitle(_translate("AboutDialog", "Dialog"))
         self.label_Version.setText(_translate("AboutDialog", "Sunless Skies Save Editor"))
-        self.label_About_License.setText(_translate("AboutDialog", "<html><head/><body><p>Distributed under <a href=\"https://www.gnu.org/licenses/gpl-3.0.en.html\"><span style=\" text-decoration: underline; color:#0000ff;\">GNU General Public License v3.0</span></a>.</p><p>Thanks to:</p><p>- 1410c and his <a href=\"https://steamcommunity.com/sharedfiles/filedetails/?id=1456294858\"><span style=\" text-decoration: underline; color:#0000ff;\">Steam Guide</span></a> that I extensively used for reference when creating this save editor.</p><p>- Felix for his help with the Linux releases</p><p>- Gibbed for his Save Editors (in particular for Borderlands 2 and TPS)</p></body></html>"))
+        self.label_About_License.setText(_translate("AboutDialog", "<html><head/><body><p>Distributed under <a href=\"https://www.gnu.org/licenses/gpl-3.0.en.html\"><span style=\" text-decoration: underline; color:#0000ff;\">GNU General Public License v3.0</span></a>.</p><p>Thanks to:</p><p>- 1410c and his <a href=\"https://steamcommunity.com/sharedfiles/filedetails/?id=1456294858\"><span style=\" text-decoration: underline; color:#0000ff;\">Steam Guide</span></a> that I extensively used for reference when creating this save editor.</p><p>- lys_xen for his help with IDs</p><p>- BiscuitCookie for maintaining and updating the wiki</p><p>- Felix for his help with the Linux releases</p><p>- Gibbed for his Save Editors (in particular for Borderlands 2 and TPS)</p></body></html>"))
         self.pushButton_About_Close.setText(_translate("AboutDialog", "Close"))
 
 

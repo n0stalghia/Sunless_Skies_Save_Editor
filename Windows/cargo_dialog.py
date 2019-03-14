@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_CargoDialog(object):
     def setupUi(self, CargoDialog):
         CargoDialog.setObjectName("CargoDialog")
-        CargoDialog.resize(384, 350)
+        CargoDialog.resize(400, 500)
         CargoDialog.setStyleSheet("QLineEdit[valid=false]{color: rgb(255,0,0)}\n"
 "QLineEdit[valid=true]{color: rgb(0,0,0)}\n"
 "QLabel[valid=false]{color: rgb(255,0,0)}\n"
