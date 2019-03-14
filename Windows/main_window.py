@@ -1161,7 +1161,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Amount"))
         self.pushButton_Bank_Add.setText(_translate("MainWindow", "+"))
         self.pushButton_Bank_Remove.setText(_translate("MainWindow", "-"))
-        self.label_89.setText(_translate("MainWindow", "<html><head/><body><p>Since not all IDs can be assigned to the correct item in-game name right now, some values will be displayed only with an ID.</p><p>Proper names will be added in a future update when more IDs are datamined and can be assigned to items/weapons.</p><p><span style=\" font-weight:600;\">Zero values not allowed. Delete the cargo if you need to remove something from the bank.</span></p></body></html>"))
+        self.label_89.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Zero values not allowed. Delete the cargo if you need to remove something from the bank.</span></p><p>If an ID is unknown (such as from a DLC), it\'ll be present in the list with the ID as it\'s name. I will try to add all new IDs when DLCs get released as fast as possible.</p><p>In the meantime, adding unknown IDs (such as from a DLC) is possible. Verify that the ID can be stored in the Bank, though.</p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Bank"))
 
 
