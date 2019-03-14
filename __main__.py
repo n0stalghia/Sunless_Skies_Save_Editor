@@ -479,8 +479,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.tableWidget_Bank.setItem(index, 0, cargo_name)
             self.ui.tableWidget_Bank.setItem(index, 1, cargo_amount)
 
-    def validated(self, sender, zero_allowed=False):
+    def record_errors(self, sender, state):
         global ERRORS
+        if state:
+            if sender not in ERRORS:
+                ERRORS.append(sender)
+            else:
+                return ERRORS
+        else:
+            if sender in ERRORS:
+                ERRORS.remove(sender)
+                return ERRORS
+
+    def validated(self, sender, zero_allowed=False):
         value = sender.text()
 
         if value == '' and zero_allowed:
@@ -491,20 +502,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             integer = int(value)
             if (zero_allowed and integer < 0) or (not zero_allowed and integer <= 0):
                 self.set_style(sender, False)
-                ERRORS = True
+                self.record_errors(sender, True)
                 return False
             else:
                 self.set_style(sender, True)
-                ERRORS = False
+                self.record_errors(sender, False)
                 return True
         except ValueError:
             self.set_style(sender, False)
-            ERRORS = True
+            self.record_errors(sender, True)
             return False
 
     def update_stats(self, level, effective_level, selection, val_id, modifier=None):
         if not INITIALIZATION:
-            global ERRORS, SAVE_FILE
+            global SAVE_FILE
 
             objects = [level, effective_level]
             if modifier:
@@ -527,12 +538,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     for sender in [level, effective_level]:
                         sender.setProperty('valid', False)
                         sender.setStyle(self.style())
-                    ERRORS = True
+                    self.record_errors(self.sender(), True)
                 elif val2 < 0:
                     for sender in [modifier, effective_level]:
                         sender.setProperty('valid', False)
                         sender.setStyle(self.style())
-                    ERRORS = True
+                    self.record_errors(self.sender(), True)
                 else:
                     elements = [level, effective_level]
                     if modifier:
@@ -545,13 +556,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     effective_level.setText(str(val1 + val2))
                     jh.write_stats(SAVE_FILE, val1, val2, val_id)
 
-                    ERRORS = False
+                    self.record_errors(self.sender(), False)
             except ValueError:
                 for sender in [selection, effective_level]:
                     sender.setProperty('valid', False)
                     sender.setStyle(self.style())
 
-                ERRORS = True
+                self.record_errors(self.sender(), True)
 
     def update_current_port(self):
         if not INITIALIZATION:
