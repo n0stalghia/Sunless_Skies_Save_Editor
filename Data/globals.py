@@ -263,7 +263,7 @@ CARGO_IDS = {
     '139073': 'Wit & Winegar \'Zounderkite\'',
     '136735': 'Cyclopean Owl',
     '133856': 'Diffident Bat',
-    '136736': 'Inerpid Cavy',
+    '136736': 'Intrepid Cavy',
     '136733': 'Star-Smitten Bat',
     '136734': 'The Ratronaut'
 }
